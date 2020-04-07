@@ -5,10 +5,7 @@
  */
 package domain;
 
-/**
- *
- * @author lucyberes
- */
+
 public class Staff {
     
     private String staffID;
