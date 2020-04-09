@@ -16,7 +16,7 @@ public class Seminar {
    private String abstracts;
    private String location;
    private String modality;
-   private LocalDate date;
+   private String date;
 
     public String getSeminarID() {
         return seminarID;
@@ -42,7 +42,7 @@ public class Seminar {
         return modality;
     }
 
-    public LocalDate getDate() {
+    public String getDate() {
         return date;
     }
 
@@ -70,7 +70,7 @@ public class Seminar {
         this.modality = modality;
     }
 
-    public void setDate(LocalDate date) {
+    public void setDate(String date) {
         this.date = date;
     }
    
