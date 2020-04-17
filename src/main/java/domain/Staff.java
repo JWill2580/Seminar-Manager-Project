@@ -16,6 +16,16 @@ public class Staff {
     private String bio;
     private String email;
 
+    public Staff(String staffID, String username, String password, String firstName, String surname, String bio, String email) {
+        this.staffID = staffID;
+        this.username = username;
+        this.password = password;
+        this.firstName = firstName;
+        this.surname = surname;
+        this.bio = bio;
+        this.email = email;
+    }
+
     public String getStaffID() {
         return staffID;
     }
