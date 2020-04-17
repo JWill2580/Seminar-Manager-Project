@@ -33,8 +33,8 @@ public class JDBCManageStaff  {
         this.dbURI = URI;
     }
 
-    public void saveCustomer(Staff aStaff) {
-        String statement = "insert into STAFF(ID, USERNAME, PASSWORD, FIRSTNAME, LASTNAME, BIO, EMAIL) values(?,?,?,?,?,?,?)";
+    public void saveStaff(Staff aStaff) {
+        String statement = "insert into STAFF(STAFFID, USERNAME, PASSWORD, FIRSTNAME, LASTNAME, BIO, EMAIL) values(?,?,?,?,?,?,?)";
 
         try (
                 // get connection to database
@@ -66,9 +66,9 @@ public class JDBCManageStaff  {
         }
     }
 
-    public Staff getStaff(String usernameDefined) {
+    public Staff getStaff(String idDefined) {
 
-        String statement = "select * from STAFF where USERNAME = ?";
+        String statement = "select * from STAFF where STAFFID = ?";
         try (
                 // get a connection to the database
                 Connection dbCon = DbConnection.getConnection(
@@ -76,13 +76,13 @@ public class JDBCManageStaff  {
                 // create the statement
                 PreparedStatement stmt = dbCon.prepareStatement(statement);) {
 
-            stmt.setString(1, usernameDefined);
+            stmt.setString(1, idDefined);
 
             // execute the query
             ResultSet rs = stmt.executeQuery();
 
             if (rs.next()) {
-                String staffID = rs.getString("STAFF_ID");
+                String staffID = rs.getString("STAFFID");
                 String username = rs.getString("USERNAME");
                 String password = rs.getString("PASSWORD");
                 String firstName = rs.getString("FIRSTNAME");
@@ -131,5 +131,13 @@ public class JDBCManageStaff  {
             throw new DAOException(ex.getMessage(), ex);
         }
     }
+    
+  /**
+   * Creating a main method for testing purposes
+    public static void main(String[] args) {
+        JDBCManageStaff staff1 = new JDBCManageStaff();
+        System.out.println(staff1.getStaff("1"));
+    }
+    */
 
 }
