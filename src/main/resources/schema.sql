@@ -11,25 +11,25 @@
 CREATE TABLE Staff (
 
 StaffID INT,
-Username varchar(20) NOT NULL UNIQUE,
-Password varchar(100) NOT NULL,
-FirstName varchar(100) NOT NULL,
-LastName varchar(100) NOT NULL,
+Username VARCHAR(20) NOT NULL UNIQUE,
+Password VARCHAR(100) NOT NULL,
+FirstName VARCHAR(100) NOT NULL,
+LastName VARCHAR(100) NOT NULL,
 Bio TEXT,
-StaffEmail varchar(50) NOT NULL,
+StaffEmail VARCHAR(50) NOT NULL,
 CONSTRAINT Staff_PK PRIMARY KEY (StaffID)
 );
 
 CREATE TABLE Seminar(
 
 SeminarID INT,
-Topic varchar(255) NOT NULL,
-Title varchar(255) NOT NULL,
+Topic VARCHAR(255) NOT NULL,
+Title VARCHAR(255) NOT NULL,
 Abstract TEXT NOT NULL,
-Location Varchar(255) NOT NULL,
-Modality Varchar(255) NOT NULL,
+Location VARCHAR(255) NOT NULL,
+Modality VARCHAR(255) NOT NULL,
 Day_Date DATE NOT NULL,
-StaffID int,
+StaffID INT,
 CONSTRAINT Seminar_PK PRIMARY KEY (SeminarID),
 CONSTRAINT StaffSeminar_FK FOREIGN KEY (StaffID) REFERENCES Staff(StaffID)
 
