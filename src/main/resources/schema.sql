@@ -8,7 +8,7 @@
  * Created: 9/04/2020
  */
 
-create table Staff (
+CREATE TABLE Staff (
 
 StaffID INT,
 Username varchar(20) NOT NULL UNIQUE,
