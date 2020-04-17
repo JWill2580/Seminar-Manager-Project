@@ -18,6 +18,17 @@ public class Seminar {
    private String modality;
    private String date;
 
+    public Seminar(String seminarID, String topic, String title, String abstracts, String location, String modality, String date) {
+        this.seminarID = seminarID;
+        this.topic = topic;
+        this.title = title;
+        this.abstracts = abstracts;
+        this.location = location;
+        this.modality = modality;
+        this.date = date;
+    }
+   
+
     public String getSeminarID() {
         return seminarID;
     }
@@ -73,7 +84,10 @@ public class Seminar {
     public void setDate(String date) {
         this.date = date;
     }
-   
-   
+
+    @Override
+    public String toString() {
+        return "Seminar{" + "seminarID=" + seminarID + ", topic=" + topic + ", title=" + title + ", abstracts=" + abstracts + ", location=" + location + ", modality=" + modality + ", date=" + date + '}';
+    }
     
 }

@@ -6,43 +6,27 @@
 package dao;
 
 import domain.Staff;
-import java.math.BigDecimal;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
-import org.h2.jdbc.JdbcConnection;
 
-/**
- *
- * @author wiljo912
- */
+
 public class JDBCManageStaff  {
 
-    String dbURI = DbConnection.getDefaultConnectionUri();
 
-    public JDBCManageStaff() {
-
-    }
-
-    public JDBCManageStaff(String URI) {
-        this.dbURI = URI;
-    }
+    public JDBCManageStaff() {}
 
     public void saveStaff(Staff aStaff) {
         String statement = "insert into STAFF(STAFFID, USERNAME, PASSWORD, FIRSTNAME, LASTNAME, BIO, EMAIL) values(?,?,?,?,?,?,?)";
 
         try (
-                // get connection to database
-                Connection dbCon = DbConnection.getConnection(
-                        DbConnection.getDefaultConnectionUri());
-                // create the statement
-                PreparedStatement stmt = dbCon.prepareStatement(statement, Statement.RETURN_GENERATED_KEYS);) {
-            // copy the data from the student domain object into the SQL parameters
+            // get connection to database
+            Connection dbCon = DbConnection.getConnection(DbConnection.getDefaultConnectionUri());
+            
+            // create the statement
+            PreparedStatement stmt = dbCon.prepareStatement(statement, Statement.RETURN_GENERATED_KEYS);) {
                   
             stmt.setString(1, aStaff.getStaffID());
             stmt.setString(2, aStaff.getUsername());
@@ -52,30 +36,26 @@ public class JDBCManageStaff  {
             stmt.setString(6, aStaff.getBio());
             stmt.setString(7, aStaff.getEmail());
 
-            stmt.executeUpdate();  // execute the statement
+            stmt.executeUpdate(); 
 
             ResultSet rs = stmt.getGeneratedKeys();
             rs.next();
             System.out.println(rs.getString(1));
-
-            
-            
-        } catch (SQLException ex) {  // we are forced to catch SQLException
-            // don't let the SQLException leak from our DAO encapsulation
+     
+        } catch (SQLException ex) { 
             throw new DAOException(ex.getMessage(), ex);
         }
     }
 
     public Staff getStaff(String idDefined) {
-
         String statement = "select * from STAFF where STAFFID = ?";
+        
         try (
-                // get a connection to the database
-                Connection dbCon = DbConnection.getConnection(
-                        DbConnection.getDefaultConnectionUri());
-                // create the statement
-                PreparedStatement stmt = dbCon.prepareStatement(statement);) {
-
+            // get a connection to the database
+            Connection dbCon = DbConnection.getConnection(DbConnection.getDefaultConnectionUri());
+            
+            // create the statement
+            PreparedStatement stmt = dbCon.prepareStatement(statement);) {
             stmt.setString(1, idDefined);
 
             // execute the query
@@ -89,9 +69,9 @@ public class JDBCManageStaff  {
                 String surname = rs.getString("SURNAME");
                 String bio = rs.getString("BIO");
                 String email = rs.getString("EMAIL");
-
-                return new Staff(staffID, username, password,
-                        firstName, surname, bio, email);
+                
+                return new Staff(staffID, username, password, firstName, surname, bio, email);
+                
             } else {
                 return null;
             }
@@ -105,12 +85,14 @@ public class JDBCManageStaff  {
         String statement = "select from STAFF where USERNAME = ? and PASSWORD = ?";
 
         try (
-                // get a connection to the database
-                Connection dbCon = DbConnection.getConnection(
-                        DbConnection.getDefaultConnectionUri());
-                PreparedStatement stmt = dbCon.prepareStatement(statement);) {
+            // get a connection to the database
+            Connection dbCon = DbConnection.getConnection(DbConnection.getDefaultConnectionUri());
+            
+            // create the statement
+            PreparedStatement stmt = dbCon.prepareStatement(statement);) { 
             stmt.setString(1, usernameDefined);
             stmt.setString(2, passwordDefined);
+            
             // execute the query
             ResultSet rs = stmt.executeQuery();
 
@@ -133,11 +115,11 @@ public class JDBCManageStaff  {
     }
     
   /**
-   * Creating a main method for testing purposes
+   * Creating a main method for testing purposes*/
     public static void main(String[] args) {
         JDBCManageStaff staff1 = new JDBCManageStaff();
-        System.out.println(staff1.getStaff("1"));
+        System.out.println(staff1.getStaff("1").toString());
     }
-    */
+    
 
 }
