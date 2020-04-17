@@ -34,7 +34,7 @@ public class JDBCManageStaff  {
     }
 
     public void saveCustomer(Staff aStaff) {
-        String statement = "insert into STAFF(ID, USERNAME, PASSWORD, FIRSTNAME, LASTNAME, BIO, STAFFEMAIL) values(?,?,?,?,?,?,?)";
+        String statement = "insert into STAFF(ID, USERNAME, PASSWORD, FIRSTNAME, LASTNAME, BIO, EMAIL) values(?,?,?,?,?,?,?)";
 
         try (
                 // get connection to database
