@@ -17,6 +17,8 @@ public class Seminar {
    private String location;
    private String modality;
    private String date;
+   
+   private Staff staff; 
 
     public Seminar(String seminarID, String topic, String title, String abstracts, String location, String modality, String date) {
         this.seminarID = seminarID;
@@ -56,7 +58,12 @@ public class Seminar {
     public String getDate() {
         return date;
     }
+    
+     public Staff getStaff() {
+        return staff;
+    }
 
+    
     public void setSeminarID(String seminarID) {
         this.seminarID = seminarID;
     }
@@ -84,7 +91,11 @@ public class Seminar {
     public void setDate(String date) {
         this.date = date;
     }
-
+    
+    public void setStaff(Staff staff) {
+        this.staff = staff;
+    }
+    
     @Override
     public String toString() {
         return "Seminar{" + "seminarID=" + seminarID + ", topic=" + topic + ", title=" + title + ", abstracts=" + abstracts + ", location=" + location + ", modality=" + modality + ", date=" + date + '}';
