@@ -29,6 +29,16 @@ public class Seminar {
         this.date = date;
         this.staff = staff;
     }
+
+    public Seminar(String seminarID, String topic, String title, String abstracts, String location, String modality, String date) {
+        this.seminarID = seminarID;
+        this.topic = topic;
+        this.title = title;
+        this.abstracts = abstracts;
+        this.location = location;
+        this.modality = modality;
+        this.date = date;
+    }
    
     //Getters
     public String getSeminarID() {
