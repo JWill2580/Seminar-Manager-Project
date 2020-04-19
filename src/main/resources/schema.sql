@@ -36,6 +36,6 @@ CONSTRAINT StaffSeminar_FK FOREIGN KEY (StaffID) REFERENCES Staff(StaffID)
 
 );
 
+--Test Data
 INSERT INTO Staff (StaffID, Username, Password, FirstName, Surname, Bio, Email) VALUES (1,'oolong1234','Meeps445','John','Ong','This is my talk', 'oolong1234@gmail.com');
-
 INSERT INTO Seminar (SeminarID, Topic, Title, Abstract, Location, Modality, Day_Date, StaffID) VALUES (1, 'Tea', 'Types of Tea', 'This is where it started', 'OBS2.57', 'Spreading joy', '17-APR-2020', 1);

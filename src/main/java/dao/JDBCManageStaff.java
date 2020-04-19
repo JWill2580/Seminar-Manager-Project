@@ -115,11 +115,12 @@ public class JDBCManageStaff  {
     }
     
   /**
-   * Creating a main method for testing purposes*/
+   * Creating a main method for testing purposes
     public static void main(String[] args) {
         JDBCManageStaff staff1 = new JDBCManageStaff();
         System.out.println(staff1.getStaff("1").toString());
     }
+    */
     
 
 }

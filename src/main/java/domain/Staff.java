@@ -5,7 +5,6 @@
  */
 package domain;
 
-
 public class Staff {
     
     private String staffID;
@@ -15,7 +14,7 @@ public class Staff {
     private String surname;
     private String bio;
     private String email;
-
+    
     public Staff(String staffID, String username, String password, String firstName, String surname, String bio, String email) {
         this.staffID = staffID;
         this.username = username;

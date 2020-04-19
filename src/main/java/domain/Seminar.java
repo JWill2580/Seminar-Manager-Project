@@ -17,10 +17,9 @@ public class Seminar {
    private String location;
    private String modality;
    private String date;
-   
    private Staff staff; 
 
-    public Seminar(String seminarID, String topic, String title, String abstracts, String location, String modality, String date) {
+    public Seminar(String seminarID, String topic, String title, String abstracts, String location, String modality, String date, Staff staff) {
         this.seminarID = seminarID;
         this.topic = topic;
         this.title = title;
@@ -28,9 +27,10 @@ public class Seminar {
         this.location = location;
         this.modality = modality;
         this.date = date;
+        this.staff = staff;
     }
    
-
+    //Getters
     public String getSeminarID() {
         return seminarID;
     }
@@ -63,7 +63,7 @@ public class Seminar {
         return staff;
     }
 
-    
+    //Setters
     public void setSeminarID(String seminarID) {
         this.seminarID = seminarID;
     }
@@ -95,10 +95,12 @@ public class Seminar {
     public void setStaff(Staff staff) {
         this.staff = staff;
     }
-    
+
     @Override
     public String toString() {
-        return "Seminar{" + "seminarID=" + seminarID + ", topic=" + topic + ", title=" + title + ", abstracts=" + abstracts + ", location=" + location + ", modality=" + modality + ", date=" + date + '}';
+        return "Seminar{" + "seminarID=" + seminarID + ", topic=" + topic + ", title=" + title + ", abstracts=" + abstracts + ", location=" + location + ", modality=" + modality + ", date=" + date + ", staff=" + staff + '}';
     }
+    
+    
     
 }
