@@ -28,6 +28,7 @@ public class Server extends Jooby {
 });
         use(new Gzon());
         use(new StaffModule(manageStaff));
+        use(new SeminarModule(manageSeminar));
         
     }
     
