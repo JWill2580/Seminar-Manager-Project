@@ -15,7 +15,7 @@ public class JDBCManageSeminar {
     
     public JDBCManageSeminar(){}
     
-    public Seminar getSeminar(String idDefined){
+    public Seminar getSeminarById(String idDefined){
         String statement = "select * from SEMINAR where SEMINARID = ?";
         
         try (
@@ -47,7 +47,44 @@ public class JDBCManageSeminar {
             } catch (SQLException ex) {
             throw new DAOException(ex.getMessage(), ex);
         }
+        
                    
+    }
+    
+    public Collection<Seminar> getAllSeminars{}{
+    	String sql = "select * from SEMINAR order by SEMINARID";
+    	
+    	try (
+        Connection dbCon = DbConnection.getConnection(DbConnection.getDefaultConnectionUri())
+        PreparedStatement stmt = dbCon.prepareStatement(statement);) {
+    ) {
+        ResultSet rs = stmt.executeQuery();
+        
+        List<Seminar> seminars = new ArrayList<>();
+
+
+        while (rs.next()) {
+
+
+            String seminarID = rs.getString("SEMINARID");
+            String topic = rs.getString("TOPIC");
+            String title = rs.getString("TITLE");
+            String abstracts = rs.getString("ABSTRACT");
+            String location = rs.getString("LOCATION");
+            String modality = rs.getString("MODALITY");
+            String date = rs.getString("DATE");
+
+            Seminar s = new Seminar(seminarID, topic, title, abstracts, location, modality, date);
+
+            seminars.add(s);
+        }
+
+        return products;
+
+    } catch (SQLException ex) {
+        throw new ExceptionDAO(ex.getMessage(), ex);
+    }
+        }
     }
     
     
