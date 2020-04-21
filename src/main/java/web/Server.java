@@ -22,10 +22,7 @@ public class Server extends Jooby {
     public Server(){
         port(8080);
         
-        get("/api/staff/:id", (req) -> {
-         String id = req.param("id").value();
-         return manageStaff.getStaff(id);
-});
+        
         use(new Gzon());
         use(new StaffModule(manageStaff));
         use(new SeminarModule(manageSeminar));
@@ -35,13 +32,15 @@ public class Server extends Jooby {
    
     public static void main(String[] args) throws Exception {
         System.out.println("\nStarting Server.");
-        Server server = new Server();
+        Server server = new Server();        
         CompletableFuture.runAsync(() -> {
           server.start();
-});
+        });
+        
         server.onStarted(() -> {
           System.out.println("\nPress Enter to stop the server.");
-});
+        });
+        
         // wait for user to hit the Enter key
         System.in.read();
         System.exit(0);

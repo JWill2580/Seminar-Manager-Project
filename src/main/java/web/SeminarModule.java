@@ -9,14 +9,12 @@ import org.jooby.Jooby;
 
 public class SeminarModule extends Jooby {
     
-    private JDBCManageSeminar manageSeminar = new JDBCManageSeminar();
-
     public SeminarModule(JDBCManageSeminar manageSeminar) {
         
         get("/api/seminars/:id", (req) -> {
-         String id = req.param("id").value();
-         return manageSeminar.getSeminarById(id);
-});
+            String id = req.param("id").value();
+            return manageSeminar.getSeminarById(id);
+        });
     }
 
     
