@@ -16,15 +16,12 @@ import org.jooby.Status;
  */
 public class StaffModule extends Jooby {
     
-    private JDBCManageStaff manageStaff = new JDBCManageStaff();
-
     public StaffModule(JDBCManageStaff manageStaff) {
         
         get("/api/staff/:id", (req) -> {
-         String id = req.param("id").value();
-         return manageStaff.getStaff(id);
-               
-});
+            String id = req.param("id").value();
+            return manageStaff.getStaff(id);      
+        });
         
         post("/api/register", (req, rsp) -> {
             Staff staff = req.body().to(Staff.class);
