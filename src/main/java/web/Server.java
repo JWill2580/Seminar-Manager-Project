@@ -20,13 +20,13 @@ public class Server extends Jooby {
     private JDBCManageSeminar manageSeminar = new JDBCManageSeminar();
     
     public Server(){
-        port(8080);
+        port(8083);
         
         
         use(new Gzon());
         use(new StaffModule(manageStaff));
         use(new SeminarModule(manageSeminar));
-        
+        use(new AssetModule());
     }
     
    
