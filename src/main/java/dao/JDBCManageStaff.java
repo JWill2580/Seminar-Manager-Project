@@ -19,7 +19,7 @@ public class JDBCManageStaff  {
     public JDBCManageStaff() {}
 
     public void saveStaff(Staff aStaff) {
-        String statement = "insert into STAFF(STAFFID, USERNAME, PASSWORD, FIRSTNAME, LASTNAME, BIO, EMAIL) values(?,?,?,?,?,?,?)";
+        String statement = "insert into STAFF(USERNAME, PASSWORD, FIRSTNAME, SURNAME, BIO, EMAIL) values(?,?,?,?,?,?)";
 
         try (
             // get connection to database
@@ -28,13 +28,13 @@ public class JDBCManageStaff  {
             // create the statement
             PreparedStatement stmt = dbCon.prepareStatement(statement, Statement.RETURN_GENERATED_KEYS);) {
                   
-            stmt.setString(1, aStaff.getStaffID());
-            stmt.setString(2, aStaff.getUsername());
-            stmt.setString(3, aStaff.getPassword());
-            stmt.setString(4, aStaff.getFirstName());
-            stmt.setString(5, aStaff.getSurname());
-            stmt.setString(6, aStaff.getBio());
-            stmt.setString(7, aStaff.getEmail());
+            
+            stmt.setString(1, aStaff.getUsername());
+            stmt.setString(2, aStaff.getPassword());
+            stmt.setString(3, aStaff.getFirstName());
+            stmt.setString(4, aStaff.getSurname());
+            stmt.setString(5, aStaff.getBio());
+            stmt.setString(6, aStaff.getEmail());
 
             stmt.executeUpdate(); 
 
@@ -114,13 +114,14 @@ public class JDBCManageStaff  {
         }
     }
     
-  /**
-   * Creating a main method for testing purposes
+  /*
     public static void main(String[] args) {
         JDBCManageStaff staff1 = new JDBCManageStaff();
-        System.out.println(staff1.getStaff("1").toString());
-    }
-    */
+        Staff stf = new Staff("a", "a", "a", "a", "a", "a", "a@a");
+        staff1.saveStaff(stf);
+
+    }*/
+    
     
 
 }

@@ -25,6 +25,11 @@ public class Staff {
         this.email = email;
     }
 
+    public Staff() {
+    }
+    
+    
+
     public String getStaffID() {
         return staffID;
     }
