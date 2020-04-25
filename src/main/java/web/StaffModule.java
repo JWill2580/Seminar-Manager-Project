@@ -18,9 +18,9 @@ public class StaffModule extends Jooby {
     
     public StaffModule(JDBCManageStaff manageStaff) {
         
-        get("/api/staff/:id", (req) -> {
-            String id = req.param("id").value();
-            return manageStaff.getStaff(id);      
+        get("/api/staff/:username", (req) -> {
+            String username = req.param("username").value();
+            return manageStaff.getStaff(username);      
         });
         
         post("/api/register", (req, rsp) -> {
@@ -29,7 +29,7 @@ public class StaffModule extends Jooby {
             rsp.status(Status.CREATED);
         });
         
-    }
+    } 
 }
         
         

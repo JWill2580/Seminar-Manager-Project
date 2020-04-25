@@ -40,7 +40,6 @@ public class Server extends Jooby {
         server.onStarted(() -> {
           System.out.println("\nPress Enter to stop the server.");
         });
-        
         // wait for user to hit the Enter key
         System.in.read();
         System.exit(0);

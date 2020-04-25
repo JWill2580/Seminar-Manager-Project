@@ -1,10 +1,147 @@
-/*
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
-*/
-/* 
-    Created on : 23/04/2020, 3:16:47 PM
-    Author     : admin
-*/
 
+* {
+    font-family: sans-serif;
+
+}
+
+#main-img {
+    display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 450px;
+}
+
+#under-img p{
+    text-align: center;
+}
+
+#menu {
+    margin: 0 auto;
+    width: 600px;
+    text-align: center;
+}
+
+#menu button + div {
+    display: inline;
+}
+
+#button-div{
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    height: 30px;
+}
+
+#cart-submit {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#total-data {
+    text-align: right;
+    padding-right: 55px;
+}
+
+#button-div p {
+    margin-left: 20px;
+    font-size: 12px;
+    font-style: italic;
+}
+
+
+button {
+    margin: 5px 5px 0px 5px;
+}
+
+
+
+#end-of-form-action-btn button{
+    display: flex;
+    justify-content: center;
+    margin: 13px auto 0px auto;
+    padding: 5px;
+}
+
+#page-header{ 
+        margin: 0 auto;
+        background-color: lightcoral;
+}
+
+h1 {
+    text-align: center;
+    padding: 10px;
+    margin: 10px;
+}
+
+
+#sign-in-p {
+     margin: 30px auto;
+    width: 400px;
+    text-align: center;
+    
+}
+
+form {
+    margin: 0 auto;
+    width: 350px;
+    padding: 5px;
+
+}
+
+fieldset {
+    margin: 20px auto;
+    width: 300px;
+}
+
+table {
+    width: 800px;
+    margin: 40px auto;
+}
+
+table tr td {
+    text-align: left;
+    
+}
+
+table tr th {
+    text-align: left;
+}
+
+
+th {
+    border-bottom: 1px dotted black;
+}
+
+table td {
+    border-bottom: 1px dotted black;
+    text-align: center;
+}
+
+table td button{
+    margin: 0;
+    padding: 5px;
+}
+
+
+label {
+  /* To make sure that all labels have the same size and are properly aligned */
+  display: inline-block;
+  width: 120px;
+  text-align: right;
+  padding:5px;
+}
+
+input {
+  font: 1em sans-serif;
+
+  /* To give the same size to all text fields */
+  width: 200px;
+  box-sizing: border-box;
+
+  border: 1px solid #999;
+}
+input:focus {
+  /* To give a little highlight on active elements */
+  border-color: #000;
+}

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html ng-app="SeminarApp">
+    <head>
+        <title>Sign in</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="css/index.css">
+        
+        <script src="js/angular.min.js"></script>
+        <script src="js/angular-resource.min.js"></script>
+        <script src="js/ngStorage.min.js"></script>
+        <script src="js/seminarmanager.js"></script>
+    </head>
+    
+    <body ng-controller="StaffController as stfctrl">
+
+       <div ng-include="'menu.html'"></div>
+
+       
+        <div id="page-header"><h1>Sign In</h1></div>
+        <p id='sign-in-p'>{{stfctrl.signInMessage}}</p>
+        <fieldset>
+            <legend>Account Details</legend>
+            <form ng-submit="stfctrl.signIn(username, password)">
+                <div>
+                    <label for="username">Username:</label>
+                    <input type="text"  name="username" ng-model="username" required>
+                </div>
+                <div>
+                    <label for="password">Password:</label>
+                    <input type="password"  name="password" ng-model="password" required>
+                </div>
+                <div id="end-of-form-action-btn">
+                    <button type="submit" class="registerbtn">Sign In</button>
+                </div>
+            </form>
+        </fieldset>
+        <p id='sign-in-p'><i>If you don't have an account then you can <a href="create-account.html">create one</a>.</i></p>
+    </body>
+</html>

@@ -47,8 +47,8 @@ public class JDBCManageStaff  {
         }
     }
 
-    public Staff getStaff(String idDefined) {
-        String statement = "select * from STAFF where STAFFID = ?";
+    public Staff getStaff(String usename) {
+        String statement = "select * from STAFF where USERNAME = ?";
         
         try (
             // get a connection to the database
@@ -56,7 +56,7 @@ public class JDBCManageStaff  {
             
             // create the statement
             PreparedStatement stmt = dbCon.prepareStatement(statement);) {
-            stmt.setString(1, idDefined);
+            stmt.setString(1, usename);
 
             // execute the query
             ResultSet rs = stmt.executeQuery();
