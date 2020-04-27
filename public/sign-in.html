@@ -9,7 +9,7 @@ and open the template in the editor.
         <title>Sign in</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" type="text/css" href="css/index.css">
+        <link rel="stylesheet" type="text/css" href="css/index.css"/>
         
         <script src="js/angular.min.js"></script>
         <script src="js/angular-resource.min.js"></script>
@@ -18,21 +18,29 @@ and open the template in the editor.
     </head>
     
     <body ng-controller="StaffController as stfctrl">
+        
+        <div ng-include="'menu.html'" ></div>
 
-       <div ng-include="'menu.html'"></div>
 
+       <!-- <div ng-include="'menu.html'"></div>-->
        
-        <div id="page-header"><h1>Sign In</h1></div>
-        <p id='sign-in-p'>{{stfctrl.signInMessage}}</p>
+        <div class="uni-header1"></div>
+        <div class="uni-header2"></div>
+        <div class="uni-header3"></div>
+
+        <img id="otago-img" src="images/uni-logo.png"> 
+        
+        <p id='sign-in-p'>Welcome to the CS&IS Seminar Manager App</p>
+        
         <fieldset>
-            <legend>Account Details</legend>
+            <legend></legend>
             <form ng-submit="stfctrl.signIn(username, password)">
                 <div>
                     <label for="username">Username:</label>
                     <input type="text"  name="username" ng-model="username" required>
                 </div>
                 <div>
-                    <label for="password">Password:</label>
+                   <label for="password">Password:</label>
                     <input type="password"  name="password" ng-model="password" required>
                 </div>
                 <div id="end-of-form-action-btn">
@@ -40,6 +48,6 @@ and open the template in the editor.
                 </div>
             </form>
         </fieldset>
-        <p id='sign-in-p'><i>If you don't have an account then you can <a href="create-account.html">create one</a>.</i></p>
+        <p id='sign-in-p2'><i>If you don't have an account then you can <a href="create-account.html">create one</a>.</i></p>
     </body>
 </html>

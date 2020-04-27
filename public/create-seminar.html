@@ -19,10 +19,16 @@ and open the template in the editor.
     <body ng-controller="SeminarController as semctrl">
         
         <div ng-include="'menu.html'" ></div>
+        
+        
+        <div class="uni-header1"></div>
+        <div class="uni-header2"></div>
+        <div class="uni-header3"></div>
   
-        <div id="page-header"><h1>Create a Seminar</h1></div>
+         <p id='sign-in-p'>Create a Custom Seminar</p>
+
         <fieldset>
-            <legend>Seminar Registry</legend>
+            <legend></legend>
             <form ng-submit="semctrl.registerSeminar(seminar)">
                 <div>
                     <label for="topic">Topic:</label>
