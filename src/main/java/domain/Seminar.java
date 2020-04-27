@@ -7,19 +7,18 @@ package domain;
 
 import java.time.LocalDate;
 
-
 public class Seminar {
-    
-   private String seminarID;
-   private String topic;
-   private String title;
-   private String abstracts;
-   private String location;
-   private String modality;
-   private String date;
-   private Staff staff; 
 
-    public Seminar(String seminarID, String topic, String title, String abstracts, String location, String modality, String date, Staff staff) {
+    private String seminarID;
+    private String topic;
+    private String title;
+    private String abstracts;
+    private String location;
+    private String modality;
+    private String date;
+    private String displayName;
+
+    public Seminar(String seminarID, String topic, String title, String abstracts, String location, String modality, String date, String displayName) {
         this.seminarID = seminarID;
         this.topic = topic;
         this.title = title;
@@ -27,19 +26,9 @@ public class Seminar {
         this.location = location;
         this.modality = modality;
         this.date = date;
-        this.staff = staff;
+        this.displayName = displayName;
     }
 
-    public Seminar(String seminarID, String topic, String title, String abstracts, String location, String modality, String date) {
-        this.seminarID = seminarID;
-        this.topic = topic;
-        this.title = title;
-        this.abstracts = abstracts;
-        this.location = location;
-        this.modality = modality;
-        this.date = date;
-    }
-   
     //Getters
     public String getSeminarID() {
         return seminarID;
@@ -68,9 +57,9 @@ public class Seminar {
     public String getDate() {
         return date;
     }
-    
-     public Staff getStaff() {
-        return staff;
+
+    public String getDisplayName() {
+        return displayName;
     }
 
     //Setters
@@ -101,16 +90,13 @@ public class Seminar {
     public void setDate(String date) {
         this.date = date;
     }
-    
-    public void setStaff(Staff staff) {
-        this.staff = staff;
+
+    public void setDisplayName(String displayName) {
+        this.displayName = displayName;
     }
 
     @Override
     public String toString() {
-        return "Seminar{" + "seminarID=" + seminarID + ", topic=" + topic + ", title=" + title + ", abstracts=" + abstracts + ", location=" + location + ", modality=" + modality + ", date=" + date + ", staff=" + staff + '}';
+        return "Seminar{" + "seminarID=" + seminarID + ", topic=" + topic + ", title=" + title + ", abstracts=" + abstracts + ", location=" + location + ", modality=" + modality + ", date=" + date + ", displayName=" + displayName + '}';
     }
-    
-    
-    
 }

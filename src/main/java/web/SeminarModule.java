@@ -5,7 +5,9 @@
  */
 package web;
 import dao.JDBCManageSeminar;
+import domain.Seminar;
 import org.jooby.Jooby;
+import org.jooby.Status;
 
 public class SeminarModule extends Jooby {
     
@@ -14,6 +16,12 @@ public class SeminarModule extends Jooby {
         get("/api/seminars/:id", (req) -> {
             String id = req.param("id").value();
             return manageSeminar.getSeminarById(id);
+        });
+        
+        post("/api/seminars/register", (req, rsp) -> {
+            Seminar seminar = req.body().to(Seminar.class);
+            manageSeminar.saveSeminar(seminar);
+            rsp.status(Status.CREATED);
         });
     }
 

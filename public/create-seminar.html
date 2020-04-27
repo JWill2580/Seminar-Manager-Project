@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html ng-app="SeminarApp">
+    <head>
+        <title>Create Seminar</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="css/index.css">
+        
+        <script src="js/angular.min.js"></script>
+        <script src="js/angular-resource.min.js"></script>
+        <script src="js/ngStorage.min.js"></script>
+        <script src="js/seminarmanager.js"></script>
+    </head>
+    <body ng-controller="SeminarController as semctrl">
+        
+        <div ng-include="'menu.html'" ></div>
+  
+        <div id="page-header"><h1>Create a Seminar</h1></div>
+        <fieldset>
+            <legend>Seminar Registry</legend>
+            <form ng-submit="semctrl.registerSeminar(seminar)">
+                <div>
+                    <label for="topic">Topic:</label>
+                    <input type="text"  name="topic" ng-model="seminar.topic" required>
+                </div>
+                <div>
+                    <label for="title">Title:</label>
+                    <input type="text"  name="title" ng-model="seminar.title" required>
+                </div>
+                <div>
+                    <label for="abstracts">Abstracts:</label>
+                    <input type="text"  name="abstracts" ng-model="seminar.abstracts" required>
+                </div>
+                <div>
+                    <label for="location">Location:</label>
+                    <input type="text" name="location" ng-model="seminar.location" required>
+                </div>
+                <div> 
+                    <label for="modality">Enter Bio:</label>
+                    <input type="text"  name="modality" ng-model="seminar.modality" required>
+                </div>
+                <div>
+                    <label for="date">Date:</label>
+                    <input type="text" name="date" ng-model="seminar.date" required>
+                </div>   
+                <div>
+                    <label for="displayName">Display Name:</label>
+                    <input type="text" name="displayName" ng-model="seminar.displayName" required>
+                </div> 
+                <div id="end-of-form-action-btn">
+                    <button type="submit" class="registerbtn">Create Seminar</button>
+                </div>
+            </form>
+        </fieldset>
+    </body>
+</html>

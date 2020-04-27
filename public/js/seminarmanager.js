@@ -65,3 +65,25 @@ module.controller('StaffController', function (registerDAO, signInDAO, $window, 
                         $sessionStorage.$reset();
                     };
                 });
+
+
+
+
+module.factory('registerSeminarDAO', function ($resource) {
+    return $resource('/api/seminars/register');
+});
+
+        module.controller('SeminarController', function (registerSeminarDAO, $window) {
+            this.registerSeminar = function (seminar) {
+                registerSeminarDAO.save(null, seminar,
+                        // success callback
+                                function () {
+                                    $window.location = 'sign-in.html';
+                                },
+                                // error callback
+                                        function (error) {
+                                            console.log(error);
+                                        }
+                                );
+                            };
+                });

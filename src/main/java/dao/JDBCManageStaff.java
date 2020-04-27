@@ -80,6 +80,40 @@ public class JDBCManageStaff  {
             throw new DAOException(ex.getMessage(), ex);
         }
     }
+    
+    public Staff getStaffThroughID(String id) {
+        String statement = "select * from STAFF where STAFFID = ?";
+        
+        try (
+            // get a connection to the database
+            Connection dbCon = DbConnection.getConnection(DbConnection.getDefaultConnectionUri());
+            
+            // create the statement
+            PreparedStatement stmt = dbCon.prepareStatement(statement);) {
+            stmt.setString(1, id);
+
+            // execute the query
+            ResultSet rs = stmt.executeQuery();
+
+            if (rs.next()) {
+                String staffID = rs.getString("STAFFID");
+                String username = rs.getString("USERNAME");
+                String password = rs.getString("PASSWORD");
+                String firstName = rs.getString("FIRSTNAME");
+                String surname = rs.getString("SURNAME");
+                String bio = rs.getString("BIO");
+                String email = rs.getString("EMAIL");
+                
+                return new Staff(staffID, username, password, firstName, surname, bio, email);
+                
+            } else {
+                return null;
+            }
+
+        } catch (SQLException ex) {
+            throw new DAOException(ex.getMessage(), ex);
+        }
+    }
 
     public Boolean validateCredentials(String usernameDefined, String passwordDefined) {
         String statement = "select from STAFF where USERNAME = ? and PASSWORD = ?";
@@ -113,15 +147,4 @@ public class JDBCManageStaff  {
             throw new DAOException(ex.getMessage(), ex);
         }
     }
-    
-  /*
-    public static void main(String[] args) {
-        JDBCManageStaff staff1 = new JDBCManageStaff();
-        Staff stf = new Staff("a", "a", "a", "a", "a", "a", "a@a");
-        staff1.saveStaff(stf);
-
-    }*/
-    
-    
-
 }
