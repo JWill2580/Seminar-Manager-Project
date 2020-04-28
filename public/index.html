@@ -24,8 +24,38 @@ and open the template in the editor.
         <div class="uni-header1"></div>
         <div class="uni-header2"></div>
         <div class="uni-header3"></div>
+        
+        <p id='sign-in-p'>Welcome to the CS&IS Seminar Manager App</p>
+        
+        <div class = indexTable>
+        <table>
+            <thead>
+                <tr>
+                    <th>StaffID</th>
+                    <td>{{staff.staffID}}</td>
+                </tr>
+                <tr>
+                    <th>Username</th>
+                    <td>{{staff.username}}</td>  
+                </tr>
+                <tr>
+                    <th>Name</th>
+                    <td>{{staff.name}}</td>  
+                </tr>
+                <tr>
+                    <th>Email</th>
+                    <td>{{staff.email}}</td>  
+                </tr>
+                <tr>
+                    <th>Bio</th>
+                    <td>{{staff.bio}}</td>  
+                </tr>
+            </thead>
+        </table>
+            
+            <button type="submit">Edit Profile</button> 
+        </div>
 
-        <div>Main Menu</div>
-        <p></p>
+        
     </body>
 </html>
