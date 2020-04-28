@@ -1,4 +1,9 @@
-
+a{
+    margin: 0 auto;
+    margin-bottom: 10px;
+    width: 600px;
+    text-align: center;
+}
 * {
     font-family: sans-serif;
 }
