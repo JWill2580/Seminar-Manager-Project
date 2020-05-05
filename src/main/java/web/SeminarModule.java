@@ -12,11 +12,12 @@ import org.jooby.Status;
 public class SeminarModule extends Jooby {
     
     public SeminarModule(JDBCManageSeminar manageSeminar) {
-        
+        get("/api/seminars", () -> manageSeminar.getSeminars());
         get("/api/seminars/:id", (req) -> {
             String id = req.param("id").value();
             return manageSeminar.getSeminarById(id);
         });
+        
         
         post("/api/seminars/register", (req, rsp) -> {
             Seminar seminar = req.body().to(Seminar.class);

@@ -9,14 +9,14 @@ and open the template in the editor.
         <title>Home</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" type="text/css" href="css/index.css">
+        <link rel="stylesheet" type="text/css" href="css/index.css"/>
 
         <script src="js/angular.min.js"></script>
         <script src="js/angular-resource.min.js"></script>
         <script src="js/ngStorage.min.js"></script>
         <script src="js/seminarmanager.js"></script>
     </head>
-    <body ng-controller="StaffController as stfctrl">
+    <body>
 
         <div ng-include="'menu.html'"></div>
         
@@ -27,46 +27,31 @@ and open the template in the editor.
         
         <p id='sign-in-p'>Welcome to the CS&IS Seminar Manager App</p>
         
-        <div class = indexTable>
         <table>
             <thead>
                 <tr>
-                    <th>StaffID</th>
-                    <td>{{staff.staffID}}</td>
-                </tr>
-                <tr>
-                    <th>Username</th>
-                    <td>{{staff.username}}</td>  
-                </tr>
-                <tr>
-                    <th>Name</th>
-                    <td>{{staff.name}}</td>  
-                </tr>
-                <tr>
-                    <th>Email</th>
-                    <td>{{staff.email}}</td>  
-                </tr>
-                <tr>
-                    <th>Bio</th>
-                    <td>{{staff.bio}}</td>  
-                </tr>
-            </thead>
-        </table>
-            
-            <button type="submit">Edit Profile</button> 
-        </div>
-        
-        <p id='sign-in-p'>Bookings Calendar</p>
-        
-        <table>
-            <thead>
-                <tr>
+                    <th>ID</th>
+                    <th>Topic</th>
+                    <th>Title</th>
+                    <th>Abstracts</th>
+                    <th>Location</th>
+                    <th>Modality</th>
                     <th>Date</th>
+                    <th>Speaker</th>
                 </tr>
             </thead>
-        </table>
-    </body>
-    
-    <a href=""> Contact Administrator</a>
-    
+            <tbody ng-controller="AllSeminarController as semCtrl">
+                <tr ng-repeat="seminar in semCtrl.seminars">
+                    <td>{{seminar.seminarID}}</td>
+                    <td>{{seminar.topic}}</td>
+                    <td>{{seminar.title}}</td>
+                    <td>{{seminar.abstracts}}</td>
+                    <td>{{seminar.location}}</td>
+                    <td>{{seminar.modality}}</td>
+                    <td>{{seminar.date}}</td>
+                    <td>{{seminar.displayName}}</td>
+                </tr>
+            </tbody>
+        </table>      
+    </body>   
 </html>

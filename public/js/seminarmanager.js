@@ -7,6 +7,7 @@
 
 var module = angular.module('SeminarApp', ['ngResource', 'ngStorage']);
 
+
 module.factory('registerDAO', function ($resource) {
     return $resource('/api/register');
 });
@@ -14,7 +15,6 @@ module.factory('registerDAO', function ($resource) {
 module.factory('signInDAO', function ($resource) {
     return $resource('/api/staff/:username');
 });
-
 
 
 module.controller('StaffController', function (registerDAO, signInDAO, $window, $sessionStorage) {
@@ -61,24 +61,22 @@ module.controller('StaffController', function (registerDAO, signInDAO, $window, 
                     };
                     this.signOut = function () {
                         this.signedIn = false;
-                        $window.location.href = 'index.html';
+                        $window.location.href = 'sign-in.html';
                         $sessionStorage.$reset();
                     };
                 });
 
-
-
-
-module.factory('registerSeminarDAO', function ($resource) {
-    return $resource('/api/seminars/register');
-});
-
+        module.factory('registerSeminarDAO', function ($resource) {
+            return $resource('/api/seminars/register');
+        });
+        
+        
         module.controller('SeminarController', function (registerSeminarDAO, $window) {
             this.registerSeminar = function (seminar) {
                 registerSeminarDAO.save(null, seminar,
                         // success callback
                                 function () {
-                                    $window.location = 'sign-in.html';
+                                    $window.location = 'index.html';
                                 },
                                 // error callback
                                         function (error) {
@@ -87,3 +85,12 @@ module.factory('registerSeminarDAO', function ($resource) {
                                 );
                             };
                 });
+
+        module.factory('seminarDAO', function ($resource) {
+            return $resource('/api/seminars');
+        });
+
+
+        module.controller('AllSeminarController', function (seminarDAO) {
+            this.seminars = seminarDAO.query();
+        });

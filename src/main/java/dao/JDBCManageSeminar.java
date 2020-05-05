@@ -101,7 +101,7 @@ public class JDBCManageSeminar {
 
             ResultSet rs = stmt.executeQuery();
 
-            List<Seminar> seminars = new ArrayList<>();
+            Collection<Seminar> seminars = new ArrayList<>();
 
             while (rs.next()) {
 
@@ -115,8 +115,6 @@ public class JDBCManageSeminar {
                 String displayName = rs.getString("DISPLAYNAME");
                 
                 Seminar s = new Seminar(seminarID, topic, title, abstracts, location, modality, date, displayName);
-                
-                
 
                 seminars.add(s);
             }
@@ -126,5 +124,16 @@ public class JDBCManageSeminar {
         } catch (SQLException ex) {
             throw new DAOException(ex.getMessage(), ex);
         }
+    }    
+    
+    /*public static void main(String[] args) {
+        JDBCManageSeminar sem = new JDBCManageSeminar();
+        Collection<Seminar> seminars = sem.getSeminars();
+
+        for(Seminar s : seminars){
+            System.out.println(s.toString());
+        }
+
     }
+    */
 }
