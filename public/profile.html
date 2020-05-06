@@ -16,14 +16,20 @@ and open the template in the editor.
         <script src="js/ngStorage.min.js"></script>
         <script src="js/seminarmanager.js"></script>
     </head>
-    <body ng-controller="StaffController as stfctrl">
+    <body ng-controller="ProfileController as proCtrl">
         
         <div ng-include="'menu.html'" ></div>
 
         <div class="uni-header1"></div>
         <div class="uni-header2"></div>
         <div class="uni-header3"></div>
-        <p id='sign-in-p'>Edit Profile</p>
         
+        <p>{{proCtrl.staffID}}</p>
+        <p>{{proCtrl.username}}</p>
+        <p>{{proCtrl.firstName}}</p>
+        <p>{{proCtrl.surname}}</p>
+        <p>{{proCtrl.bio}}</p>
+        <p>{{proCtrl.email}}</p>
+           
     </body>
 </html>

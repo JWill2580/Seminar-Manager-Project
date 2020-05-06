@@ -54,7 +54,7 @@ module.controller('StaffController', function (registerDAO, signInDAO, $window, 
                         // has the customer been added to the session?
                         if ($sessionStorage.staff) {
                             this.signedIn = true;
-                            this.welcome = "Welcome " + $sessionStorage.staff.firstName;//could be issue with upper case N
+                            this.welcome = "Welcome " + $sessionStorage.staff.firstName;
                         } else {
                             this.signedIn = false;
                         }
@@ -93,7 +93,21 @@ module.controller('StaffController', function (registerDAO, signInDAO, $window, 
 
         module.controller('AllSeminarController', function (seminarDAO) {
             this.seminars = seminarDAO.query();
-            /*console.log(seminars);*/
         });
+        
+        
+        module.controller('ProfileController', function ($sessionStorage) {         
+            this.staffID = $sessionStorage.staff.staffID;
+            this.username = $sessionStorage.staff.username;
+            this.firstName = $sessionStorage.staff.firstName;
+            this.surname = $sessionStorage.staff.surname;
+            this.bio = $sessionStorage.staff.bio;
+            this.email = $sessionStorage.staff.email;
+        });
+
+       
+        
+        
+        
         
        
