@@ -93,4 +93,7 @@ module.controller('StaffController', function (registerDAO, signInDAO, $window, 
 
         module.controller('AllSeminarController', function (seminarDAO) {
             this.seminars = seminarDAO.query();
+            /*console.log(seminars);*/
         });
+        
+       

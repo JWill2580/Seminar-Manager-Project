@@ -14,9 +14,9 @@ and open the template in the editor.
         <script src="js/angular.min.js"></script>
         <script src="js/angular-resource.min.js"></script>
         <script src="js/ngStorage.min.js"></script>
-        <script src="js/seminarmanager.js"></script>
+        <script src="js/seminarmanager.js"></script>      
     </head>
-    <body>
+    <body ng-controller="AllSeminarController as semCtrl">
 
         <div ng-include="'menu.html'"></div>
         
@@ -40,7 +40,7 @@ and open the template in the editor.
                     <th>Speaker</th>
                 </tr>
             </thead>
-            <tbody ng-controller="AllSeminarController as semCtrl">
+            <tbody>
                 <tr ng-repeat="seminar in semCtrl.seminars">
                     <td>{{seminar.seminarID}}</td>
                     <td>{{seminar.topic}}</td>
@@ -52,6 +52,6 @@ and open the template in the editor.
                     <td>{{seminar.displayName}}</td>
                 </tr>
             </tbody>
-        </table>      
+        </table>    
     </body>   
 </html>

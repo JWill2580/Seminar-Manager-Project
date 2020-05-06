@@ -1,7 +1,7 @@
 <div id="menu" ng-controller="StaffController as stfCtrl" ng-init="stfCtrl.checkSignIn()">
             <button onclick="window.location.href = 'index.html';">Home</button>
             <button onclick="window.location.href = 'create-seminar.html';" ng-if="stfCtrl.signedIn">Create Seminar</button>
-            <button onclick="window.location.href = '';" ng-if="stfCtrl.signedIn">View Profile</button>
+            <button onclick="window.location.href = 'profile.html';" ng-if="stfCtrl.signedIn">View Profile</button>
             <button onclick="window.location.href = '#';" ng-if="stfCtrl.signedIn" ng-click="stfCtrl.signOut()">Sign Out</button>
             <button onclick="window.location.href = 'sign-in.html';" ng-if="!stfCtrl.signedIn">Sign In</button>
             <div id="welcome" ><i>{{stfCtrl.welcome}}</i></div>
