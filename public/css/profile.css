@@ -1,27 +1,5 @@
-/*
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
-*/
-/* 
-    Created on : 8/05/2020, 2:18:38 PM
-    Author     : niamissy
-*/
-
-
-* {
+{
     font-family: sans-serif;
-}
-
-#main-img {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 450px;
-}
-
-#under-img p{
-    text-align: center;
 }
 
 #menu {
@@ -49,30 +27,3 @@ and open the template in the editor.
     background-color: red;
     height: 5px;
 }
-
-
-button {
-    margin: 5px 5px 0px 5px;
-}
-
-
-#page-header{ 
-        margin: 0 auto;
-        background-color: lightcoral;
-}
-
-p {
-    text-align: center;
-    padding: 10px;
-    margin: 10px;
-}
-
-
-label {
-  /* To make sure that all labels have the same size and are properly aligned */
-  display: inline-block;
-  width: 120px;
-  text-align: right;
-  padding:5px;
-}
-
