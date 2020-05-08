@@ -23,14 +23,40 @@ and open the template in the editor.
         <div class="uni-header1"></div>
         <div class="uni-header2"></div>
         <div class="uni-header3"></div>
+  
         
+        <h1>My Profile</h1>
         
-        <p>{{proCtrl.staffID}}</p>
-        <p>{{proCtrl.username}}</p>
-        <p>{{proCtrl.firstName}}</p>
-        <p>{{proCtrl.surname}}</p>
-        <p>{{proCtrl.bio}}</p>
-        <p>{{proCtrl.email}}</p>
+        <h2>Welcome to your profile, {{proCtrl.firstName}} {{proCtrl.surname}}</h2>
+        
+        <p>Here are your account details:</p>
+    
+        <table>
+            <tr>
+                <th>Staff ID:</th>
+                <td>{{proCtrl.staffID}}</td>
+            </tr>
+            <tr>
+                <th>Username:</th>
+                <td>{{proCtrl.username}}</td>
+            </tr>
+            <tr>
+                <th>First Name:</th>
+                <td>{{proCtrl.firstName}}</td>
+            </tr>
+            <tr>
+                <th>Surname:</th>
+                <td>{{proCtrl.surname}}</td>
+            </tr>
+            <tr>
+                <th id="bio-height">Bio:</th>
+                <td>{{proCtrl.bio}}</td>
+            </tr>
+            <tr>
+                <th>Email:</th>
+                <td>{{proCtrl.email}}</td>
+            </tr>
+        </table>
            
     </body>
 </html>

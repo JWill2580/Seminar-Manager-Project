@@ -26,7 +26,7 @@ Topic VARCHAR(255) NOT NULL,
 Title VARCHAR(255) NOT NULL,
 Abstract TEXT NOT NULL,
 Location VARCHAR(255) NOT NULL,
-Modality VARCHAR(255) NOT NULL,
+Modality TEXT NOT NULL,
 Day_Date VARCHAR(20) NOT NULL,
 DisplayName varchar(50) NOT NULL,
 --
