@@ -9,7 +9,7 @@ and open the template in the editor.
         <title>Home</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" type="text/css" href="css/index.css"/>
+        <link rel="stylesheet" type="text/css" href="css/homepage.css"/>
 
         <script src="js/angular.min.js"></script>
         <script src="js/angular-resource.min.js"></script>
@@ -25,7 +25,11 @@ and open the template in the editor.
         <div class="uni-header2"></div>
         <div class="uni-header3"></div>
         
-        <p id='sign-in-p'>Welcome to the CS&IS Seminar Manager App</p>
+        <img id="otago-img" src="images/uni-logo.png">  
+        
+        <h1>Welcome to the CS&IS Seminar Manager App</h1>
+        
+        <p> The schedule for the CS&IS Seminars are listed below: </p>
         
         <table>
             <thead>
@@ -43,9 +47,9 @@ and open the template in the editor.
             <tbody>
                 <tr ng-repeat="seminar in semCtrl.seminars">
                     <td>{{seminar.seminarID}}</td>
-                    <td>{{seminar.topic}}</td>
-                    <td>{{seminar.title}}</td>
-                    <td>{{seminar.abstracts}}</td>
+                    <td id="topic-length">{{seminar.topic}}</td>
+                    <td id="title-length">{{seminar.title}}</td>
+                    <td id="abstract-length">{{seminar.abstracts}}</td>
                     <td>{{seminar.location}}</td>
                     <td>{{seminar.modality}}</td>
                     <td>{{seminar.date}}</td>
