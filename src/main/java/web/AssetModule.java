@@ -15,11 +15,22 @@ import org.jooby.Results;
 public class AssetModule extends Jooby {
 
     public AssetModule() {
-        assets("/*.html");
-        assets("/css/*.css");
-        assets("/js/*.js");
-        assets("/images/*.png");
+        assets("/create-account.html");
+        assets("/create-seminar.html");
+        assets("/index.html");
+        assets("/profile.html");
+        assets("/sign-in.html");
+        
+        assets("/css/homepage.css");
+        assets("/css/index.css");
+        assets("/css/profile.css");
+        
+        assets("/js/seminarmanager.js");
+        
+        assets("/images/uni-logo.png");
         assets("/images/*.jpg");
+        
+        
         // make index.html the default page
         assets("/", "sign-in.html");
         // prevent 404 errors due to browsers requesting favicons
