@@ -31,7 +31,11 @@ Day_Date VARCHAR(20) NOT NULL,
 DisplayName varchar(50) NOT NULL,
 --
 CONSTRAINT Seminar_PK PRIMARY KEY (SeminarID),
+CONSTRAINT CHK_MODALITY CHECK (Modality = 'Zoom' OR Modality = 'University')
+
 );
+
+
 
 --Test Data
 INSERT INTO Staff (StaffID, Username, Password, FirstName, Surname, Bio, Email) VALUES (1,'oolong1234','Meeps445','John','Ong','This is my talk', 'oolong1234@gmail.com');
