@@ -23,7 +23,7 @@ public class Server extends Jooby {
     
     public Server(){
         port(8083);
-        
+       
         
         use(new Gzon());
         use(new StaffModule(manageStaff));
