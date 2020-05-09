@@ -10,7 +10,7 @@
 
 CREATE TABLE Staff (
 StaffID varchar(50) not null auto_increment,
-Username VARCHAR(20) NOT NULL,
+Username VARCHAR(20) NOT NULL unique,
 Password VARCHAR(100) NOT NULL,
 FirstName VARCHAR(100) NOT NULL,
 Surname VARCHAR(100) NOT NULL,
