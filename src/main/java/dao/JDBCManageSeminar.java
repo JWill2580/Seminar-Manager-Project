@@ -50,23 +50,22 @@ public class JDBCManageSeminar {
             throw new DAOException(ex.getMessage(), ex);
         }
     }
-        public void delete(Seminar sem) {
+        
+    public void delete(Seminar sem) {
         String sql = "delete from SEMINAR where SEMINARID = ?";
-                    try (
-        // get a connection to the database
-        Connection dbCon = DbConnection.getConnection(DbConnection.getDefaultConnectionUri());
+        try (
+                // get a connection to the database
+                Connection dbCon = DbConnection.getConnection(DbConnection.getDefaultConnectionUri());
+                // create the statement
+                PreparedStatement stmt = dbCon.prepareStatement(sql);) {
 
-        // create the statement
-        PreparedStatement stmt = dbCon.prepareStatement(sql);
-    ) {
-        
-        stmt.setString(1, sem.getSeminarID());
-        stmt.executeUpdate();
-        
+            stmt.setString(1, sem.getSeminarID());
+            stmt.executeUpdate();
+
         } catch (SQLException ex) {
-        throw new DAOException(ex.getMessage(), ex);
-    }
-        
+            throw new DAOException(ex.getMessage(), ex);
+        }
+
     }
 
 
@@ -82,6 +81,44 @@ public class JDBCManageSeminar {
             
             
             stmt.setString(1, idDefined);
+
+            // execute the query
+            ResultSet rs = stmt.executeQuery();
+
+            if (rs.next()) {
+                String seminarID = rs.getString("SEMINARID");
+                String topic = rs.getString("TOPIC");
+                String title = rs.getString("TITLE");
+                String abstracts = rs.getString("ABSTRACT");
+                String location = rs.getString("LOCATION");
+                String modality = rs.getString("MODALITY");
+                String date = rs.getString("DAY_DATE");
+                String displayName = rs.getString("DISPLAYNAME");
+
+                return new Seminar(seminarID, topic, title, abstracts, location, modality, date, displayName);
+
+            } else {
+                return null;
+            }
+
+        } catch (SQLException ex) {
+            throw new DAOException(ex.getMessage(), ex);
+        }
+
+    }
+    
+    public Seminar getSeminarByName(String name) {
+        String statement = "select * from SEMINAR where DISPLAYNAME = ?";
+
+        try (
+            // get a connection to the database
+            Connection dbCon = DbConnection.getConnection(DbConnection.getDefaultConnectionUri());
+                
+            // create the statement
+            PreparedStatement stmt = dbCon.prepareStatement(statement);) {
+            
+            
+            stmt.setString(1, name);
 
             // execute the query
             ResultSet rs = stmt.executeQuery();

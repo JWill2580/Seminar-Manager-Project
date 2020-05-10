@@ -15,17 +15,23 @@ import org.jooby.Results;
 public class AssetModule extends Jooby {
 
     public AssetModule() {
+        assets("/menu.html");
         assets("/create-account.html");
         assets("/create-seminar.html");
         assets("/index.html");
         assets("/profile.html");
         assets("/sign-in.html");
         
+        
         assets("/css/homepage.css");
         assets("/css/index.css");
         assets("/css/profile.css");
         
+        assets("js/angular.min.js");
+        assets("js/angular-resource.min.js");
+        assets("js/ngStorage.min.js");
         assets("/js/seminarmanager.js");
+        
         
         assets("/images/uni-logo.png");
         assets("/images/*.jpg");
