@@ -9,7 +9,7 @@ and open the template in the editor.
         <title>Edit Profile</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" type="text/css" href="css/profile.css">
+        <link rel="stylesheet" type="text/css" href="css/index.css">
         
         <script src="js/angular.min.js"></script>
         <script src="js/angular-resource.min.js"></script>
@@ -29,32 +29,32 @@ and open the template in the editor.
         
         <h2>Welcome to your profile, {{proCtrl.firstName}} {{proCtrl.surname}}</h2>
         
-        <p>Here are your account details:</p>
+        <p id="p2">Here are your account details:</p>
     
-        <table>
+        <table id="table-profile">
             <tr>
                 <th>Staff ID:</th>
-                <td>{{proCtrl.staffID}}</td>
+                <td id="td-border">{{proCtrl.staffID}}</td>
             </tr>
             <tr>
                 <th>Username:</th>
-                <td>{{proCtrl.username}}</td>
+                <td id="td-border">{{proCtrl.username}}</td>
             </tr>
             <tr>
                 <th>First Name:</th>
-                <td>{{proCtrl.firstName}}</td>
+                <td id="td-border">{{proCtrl.firstName}}</td>
             </tr>
             <tr>
                 <th>Surname:</th>
-                <td>{{proCtrl.surname}}</td>
+                <td id="td-border">{{proCtrl.surname}}</td>
             </tr>
             <tr>
                 <th id="bio-height">Bio:</th>
-                <td>{{proCtrl.bio}}</td>
+                <td id="td-border">{{proCtrl.bio}}</td>
             </tr>
             <tr>
                 <th>Email:</th>
-                <td>{{proCtrl.email}}</td>
+                <td id="td-border">{{proCtrl.email}}</td>
             </tr>
         </table>
            
