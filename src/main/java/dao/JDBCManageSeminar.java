@@ -50,8 +50,8 @@ public class JDBCManageSeminar {
             throw new DAOException(ex.getMessage(), ex);
         }
     }
-    public void delete(Staff staff) {
-        String sql = "delete from STAFF where STAFFID = ?";
+        public void delete(Seminar sem) {
+        String sql = "delete from SEMINAR where SEMINARID = ?";
                     try (
         // get a connection to the database
         Connection dbCon = DbConnection.getConnection(DbConnection.getDefaultConnectionUri());
@@ -60,14 +60,15 @@ public class JDBCManageSeminar {
         PreparedStatement stmt = dbCon.prepareStatement(sql);
     ) {
         
-        stmt.setString(1, staff.getStaffID());
+        stmt.setString(1, sem.getSeminarID());
         stmt.executeUpdate();
         
         } catch (SQLException ex) {
         throw new DAOException(ex.getMessage(), ex);
     }
         
-    } 
+    }
+
 
     public Seminar getSeminarById(String idDefined) {
         String statement = "select * from SEMINAR where SEMINARID = ?";
