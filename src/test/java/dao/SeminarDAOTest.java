@@ -69,9 +69,9 @@ public class SeminarDAOTest {
         assertTrue("sem3 should exist", seminars.contains(sem3));
 
         
-        //assertEquals("Only 2 staff in result", 2, seminars.size());
+        assertEquals("Only 2 staff in result", 2, seminars.size());
         
-        /*for (Seminar s : seminars) {
+        for (Seminar s : seminars) {
             if (s.equals(sem1)) {
                 // ensure that all of the details were correctly retrieved
                 assertEquals(sem1.getSeminarID(), s.getSeminarID());
@@ -83,9 +83,9 @@ public class SeminarDAOTest {
                 assertEquals(sem1.getDate(), s.getDate());
                 assertEquals(sem1.getDisplayName(), s.getDisplayName());
             }
-        }*/
+        }
     }
-    /*@Test
+    @Test
     public void getSeminarById(){
         Seminar retrieved = seminarDAO.getSeminarById(sem1.getSeminarID());
         assertEquals("retrieved seminar should be the same", sem1, retrieved);
@@ -106,6 +106,6 @@ public class SeminarDAOTest {
         
         assertNull("Seminar member should no longer exist", result);
         
-    }*/
+    }
     
 }
