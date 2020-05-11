@@ -10,6 +10,7 @@ and open the template in the editor.
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" type="text/css" href="css/index.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600,700,700i&display=swap" rel="stylesheet">
         
         <script src="js/angular.min.js"></script>
         <script src="js/angular-resource.min.js"></script>
@@ -18,43 +19,44 @@ and open the template in the editor.
     </head>
     <body ng-controller="StaffController as stfctrl">
         
-        <div ng-include="'menu.html'" ></div>
+        <div class="nav-background">
+        
+        <div class = "nav" ng-include="'menu.html'" ></div>
+        </div>
 
-        <div class="uni-header1"></div>
         <div class="uni-header2"></div>
-        <div class="uni-header3"></div>
-       
-        <img id="otago-img" src="images/uni-logo.png"> 
-
         
-        <p id='sign-in-p'>Welcome to the CS&IS Seminar Manager App</p>
+        <p id='sign-in-p'>Create an Account</p>
         
-        <fieldset>
-            <legend></legend>
+      
+        <fieldset class="createaccount-fieldset">
+            
+           
+            <legend>Account Details</legend>
             <form ng-submit="stfctrl.registerStaff(staff)">
                 <div>
-                    <label for="username">Username:</label>
-                    <input type="text"  name="username" ng-model="staff.username" required>
+                    <label class ="createlabel" for="username">Username:</label>
+                    <input class ="createinput" type="text" placeholder ="Enter Username" name="username" ng-model="staff.username" required>
                 </div>
                 <div>
-                    <label for="password">Password:</label>
-                    <input type="password"  name="password" ng-model="staff.password" required>
+                    <label class ="createlabel" for="password">Password:</label>
+                    <input class ="createinput" type="password" placeholder ="Enter Password" name="password" ng-model="staff.password" required>
                 </div>
                 <div>
-                    <label for="firstname">First Name:</label>
-                    <input type="text"  name="firstname" ng-model="staff.firstName" required>
+                    <label class ="createlabel" for="firstname">First Name:</label>
+                    <input class ="createinput" type="text" placeholder ="Enter First Name" name="firstname" ng-model="staff.firstName" required>
                 </div>
                 <div>
-                    <label for="surname">Last Name:</label>
-                    <input type="text" name="surname" ng-model="staff.surname" required>
+                    <label class ="createlabel" for="surname">Last Name:</label>
+                    <input class ="createinput" type="text" placeholder ="Enter Surname" name="surname" ng-model="staff.surname" required>
                 </div>
                 <div> 
-                    <label for="bio">Enter Bio</label>
-                    <input type="text"  name="bio" ng-model="staff.bio" required>
+                    <label class ="createlabel" for="bio">Bio:</label>
+                    <input class ="createinput" id="biolabel" type="text" placeholder ="Enter Short Bio"  name="bio" ng-model="staff.bio" required>
                 </div>
                 <div>
-                    <label for="email">Email:</label>
-                    <input type="email" name="email" ng-model="staff.email" required>
+                    <label class ="createlabel" for="email">Email:</label>
+                    <input class ="createinput" type="email" placeholder ="Enter Email" name="email" ng-model="staff.email" required>
                 </div>
                 
                 <div id="end-of-form-action-btn">
