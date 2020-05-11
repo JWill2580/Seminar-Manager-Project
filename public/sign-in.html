@@ -10,6 +10,8 @@ and open the template in the editor.
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" type="text/css" href="css/index.css"/>
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600,700,700i&display=swap" rel="stylesheet">
+        
         
         <script src="js/angular.min.js"></script>
         <script src="js/angular-resource.min.js"></script>
@@ -21,24 +23,30 @@ and open the template in the editor.
         
         <div ng-include="'menu.html'" ></div>
        
-        <div class="uni-header1"></div>
+        <!--<div class="uni-header1"></div>
         <div class="uni-header2"></div>
         <div class="uni-header3"></div>
-
+        -->
+        
+        <div class="vl"></div>
+        <div class="v2"></div>
+        <div class="v3"></div>
+        
         <img id="otago-img" src="images/uni-logo.png"> 
         
-        <p id="sign-in-p">Welcome to the CS&IS Seminar Manager App</p>
+        
         
         <fieldset>
-            <legend></legend>
+            <p id="sign-in-p">Welcome to the CS&IS Seminar Manager App</p>
+            
             <form ng-submit="stfctrl.signIn(username, password)">
                 <div>
                     <label for="username">Username:</label>
-                    <input type="text"  name="username" ng-model="username" required>
+                    <input type="text"  name="username" placeholder ="Enter Username" ng-model="username" required>
                 </div>
                 <div>
                    <label for="password">Password:</label>
-                    <input type="password"  name="password" ng-model="password" required>
+                    <input type="password"  name="password" placeholder ="Enter Password" ng-model="password" required>
                 </div>
                 <div id="end-of-form-action-btn">
                     <button type="submit" class="registerbtn">Sign In</button>
