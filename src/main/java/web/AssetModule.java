@@ -34,6 +34,7 @@ public class AssetModule extends Jooby {
         
         
         assets("/images/uni-logo.png");
+        assets("/images/logo.png");
         assets("/images/*.jpg");
         
         

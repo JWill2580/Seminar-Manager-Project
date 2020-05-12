@@ -10,6 +10,8 @@ and open the template in the editor.
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" type="text/css" href="css/index.css"/>
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600,700,700i&display=swap" rel="stylesheet">
+        
 
         <script src="js/angular.min.js"></script>
         <script src="js/angular-resource.min.js"></script>
@@ -17,33 +19,35 @@ and open the template in the editor.
         <script src="js/seminarmanager.js"></script>      
     </head>
     <body ng-controller="AllSeminarController as semCtrl">
+        
+         <img id="logo" src="images/logo.png"> 
 
+        <div class="nav-background">
         <div ng-include="'menu.html'"></div>
+        </div>
         
-        
-        <div class="uni-header1"></div>
         <div class="uni-header2"></div>
-        <div class="uni-header3"></div>
-        
-        <img id="homepage-img" src="images/uni-logo.png">  
+     
         
         <h1>Welcome to the CS&IS Seminar Manager App</h1>
         
         <p id="p2"> The schedule for the CS&IS Seminars are listed below: </p>
         
+      
         <table>
             <thead>
                 <tr>
                    <!-- <th>ID</th>-->
                     <th>Topic</th>
                     <th>Title</th>
-                    <th>Abstracts</th>
+                    <th>Abstract</th>
                     <th>Location</th>
                     <th>Modality</th>
                     <th>Date</th>
                     <th>Speaker</th>
                 </tr>
             </thead>
+            
             <tbody>
                 <tr id="tr-main" ng-repeat="seminar in semCtrl.seminars">
                     <!--<td>{{seminar.seminarID}}</td>-->
@@ -56,6 +60,7 @@ and open the template in the editor.
                     <td>{{seminar.displayName}}</td>
                 </tr>
             </tbody>
-        </table>    
+             
+        </table> 
     </body>   
 </html>
