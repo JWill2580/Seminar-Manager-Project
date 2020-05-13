@@ -10,6 +10,8 @@ and open the template in the editor.
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" type="text/css" href="css/index.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600,700,700i&display=swap" rel="stylesheet">
+        
         
         <script src="js/angular.min.js"></script>
         <script src="js/angular-resource.min.js"></script>
@@ -18,12 +20,12 @@ and open the template in the editor.
     </head>
     <body ng-controller="ProfileController as proCtrl">
         
-        <div ng-include="'menu.html'" ></div>
-
-        <div class="uni-header1"></div>
+        <img id="logo" src="images/logo.png"> 
+        
+        <div class="nav-background">
+        <div class = "nav" ng-include="'menu.html'" ></div>
+        </div>
         <div class="uni-header2"></div>
-        <div class="uni-header3"></div>
-  
         
         <h1>My Profile</h1>
         
@@ -31,30 +33,30 @@ and open the template in the editor.
         
         <p id="p2">Here are your account details:</p>
     
-        <table id="table-profile">
+        <table class="profileTable">
             <tr>
-                <th>Staff ID:</th>
-                <td id="td-border">{{proCtrl.staffID}}</td>
+                <th class ="profileLabel">Staff ID:</th>
+                <td class ="profileTD">{{proCtrl.staffID}}</td>
             </tr>
             <tr>
-                <th>Username:</th>
-                <td id="td-border">{{proCtrl.username}}</td>
+                <th class ="profileLabel">Username:</th>
+                <td class ="profileTD">{{proCtrl.username}}</td>
             </tr>
             <tr>
-                <th>First Name:</th>
-                <td id="td-border">{{proCtrl.firstName}}</td>
+                <th class ="profileLabel">First Name:</th>
+                <td class ="profileTD">{{proCtrl.firstName}}</td>
             </tr>
             <tr>
-                <th>Surname:</th>
-                <td id="td-border">{{proCtrl.surname}}</td>
+                <th class ="profileLabel">Surname:</th>
+                <td class ="profileTD">{{proCtrl.surname}}</td>
             </tr>
             <tr>
-                <th id="bio-height">Bio:</th>
-                <td id="td-border">{{proCtrl.bio}}</td>
+                <th class ="profileLabel" id="bio-height">Bio:</th>
+                <td class ="profileTD">{{proCtrl.bio}}</td>
             </tr>
             <tr>
-                <th>Email:</th>
-                <td id="td-border">{{proCtrl.email}}</td>
+                <th class ="profileLabel">Email:</th>
+                <td class ="profileTD">{{proCtrl.email}}</td>
             </tr>
         </table>
            

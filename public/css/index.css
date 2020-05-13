@@ -276,14 +276,12 @@ h2 {
 }
 */
 
-table{
+table.indexTable{
     width:100%;
     border-collapse: collapse;
     height: 400px;
     overflow-y: scroll; 
     display: block;
-    
-    
     
 }
 
@@ -306,13 +304,28 @@ table{
 }
 
 #bio-height {
-    height: 170px;
+    height: 100px;
 }
 
-#table-profile {
-    width: 600px;
-    border-collapse: collapse;
+.tableAlign{
+    
+    
 }
+
+table.profileTable{
+     
+  margin-left: auto;
+  margin-right: auto;
+  
+}
+
+.profileLabel,.profileTD{
+    border-bottom: none;
+    
+}
+
+
+
 
 /*th {
     width: 200px;
@@ -344,11 +357,7 @@ th, td {
 
 
 
-#td-border {
-    font-style: italic;
-    border: 1px solid black;
-    border-collapse: collapse;
-}
+
 
 .nav-background{
     background-color: #00508F;
