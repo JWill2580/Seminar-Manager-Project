@@ -19,6 +19,8 @@ and open the template in the editor.
     </head>
     <body ng-controller="StaffController as stfctrl">
         
+        <img id="logo" src="images/logo.png"> 
+        
         <div class="nav-background">
         
         <div class = "nav" ng-include="'menu.html'" ></div>
@@ -52,7 +54,7 @@ and open the template in the editor.
                 </div>
                 <div> 
                     <label class ="createlabel" for="bio">Bio:</label>
-                    <input class ="createinput" id="biolabel" type="text" placeholder ="Enter Short Bio"  name="bio" ng-model="staff.bio" required>
+                    <textarea class ="createinput" id="biolabel" type="text" placeholder ="Enter Short Bio"  name="bio" ng-model="staff.bio" required></textarea>
                 </div>
                 <div>
                     <label class ="createlabel" for="email">Email:</label>

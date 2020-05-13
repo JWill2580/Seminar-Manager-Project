@@ -195,8 +195,10 @@ input,label {
 }
 
 input{
-      border: 1px solid #999;
-      background-color: #e6e6e6;
+    border: none;
+    border-radius: 4px;
+    box-sizing: border-box;
+    background-color: #e6e6e6;
     
 }
 
@@ -385,15 +387,20 @@ legend{
     color: #00508F;
 }
 
-#biolabel{
-    height:80px;
-    
-}
-
 #logo{
  position: absolute;
 	top: 12px;
 	left:12px;
+    
+}
+
+textarea{
+    border: 1px solid #999;
+    background-color: #e6e6e6;
+    
+    
+       
+    
     
 }
 
