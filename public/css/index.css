@@ -2,12 +2,6 @@
 * {
     font-family: 'Open Sans', sans-serif;
 }
-/*a{
-    margin: 0 auto;
-    margin-bottom: 10px;
-    width: 600px;
-    text-align: center;
-}*/
 
 #main-img {
   display: block;
@@ -22,7 +16,6 @@
 
 #menu {
     margin: 0 auto;
-    margin-bottom: 10px;
     width: 600px;
     text-align: center;
 }
@@ -80,15 +73,19 @@ button {
   color: white;
   font-size: 13px;
   padding: 15px 32px;
+  
  
 }
 
 
-
+/*Welcome user text at top of nav bar*/
 #welcome{
     color: white;
     font-size: 15px;
-    margin-top:100px;
+    position: absolute;
+    top: 22px;
+    left: 1050px;
+    
     
 }
 
@@ -172,6 +169,8 @@ input:focus {
   border-color: #000;
 }
 
+/* Vertical Stripes on Sign-In Page*/
+
 .vl {
   border-left: 60px solid #00508F;
   height: 100%;
@@ -223,17 +222,6 @@ h2 {
 }
 
 
-/*table {
-    height: 300px;
-    width: 1300px;
-    border: 1px solid black;
-    border-collapse: collapse;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;  
-}
-*/
-
 table.indexTable{
     width:100%;
     border-collapse: collapse;
@@ -243,9 +231,8 @@ table.indexTable{
     
 }
 
-
+/* Every second row in table will be shaded grey*/
 #tr-main:nth-child(even) {background-color: #f2f2f2;}
-
 
 
 #abstract-length{
@@ -261,26 +248,19 @@ table.indexTable{
     width: 130px;
 }
 
-/*#bio-height {
-    height: 100px;
-}*/
-
-.tableAlign{
-    
-    
-}
 
 table.profileTable{
-     
+  background-color: #e6e6e6;
+  margin-top: 40px;   
   margin-left: auto;
   margin-right: auto;
+  
  
   
 }
 
 .profileLabel,.profileTD{
     border-bottom: none;
-    
 }
 
 th {
@@ -288,11 +268,9 @@ th {
     font-weight: bold;
     font-size: 15px;
     width: 100px;
-    border-bottom: 2px solid #00508F;
-     
+    border-bottom: 2px solid #00508F;    
    
 }
-
 
 th, td {
   padding: 5px;

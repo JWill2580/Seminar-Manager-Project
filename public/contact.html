@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html ng-app="SeminarApp">
+    <head>
+        <title>Contact Admin</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="css/index.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600,700,700i&display=swap" rel="stylesheet">
+        
+        
+        <script src="js/angular.min.js"></script>
+        <script src="js/angular-resource.min.js"></script>
+        <script src="js/ngStorage.min.js"></script>
+        <script src="js/seminarmanager.js"></script>
+    </head>
+   <body ng-controller="SeminarController as semctrl">
+       <img id="logo" src="images/logo.png"> 
+        <div class="nav-background">
+        <div ng-include="'menu.html'"></div>
+        </div>
+        
+        <div class="uni-header2"></div>
+    </body>
+</html>
