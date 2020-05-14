@@ -2,12 +2,6 @@
 * {
     font-family: 'Open Sans', sans-serif;
 }
-/*a{
-    margin: 0 auto;
-    margin-bottom: 10px;
-    width: 600px;
-    text-align: center;
-}*/
 
 #main-img {
   display: block;
@@ -22,7 +16,6 @@
 
 #menu {
     margin: 0 auto;
-    margin-bottom: 10px;
     width: 600px;
     text-align: center;
 }
@@ -57,16 +50,6 @@
     margin-top: 5%;
 }
 
-
-/*#otago-img{   
-    width: 200px;
-    height: 280px;
-    float: left;
-    position: absolute;
-    margin-left: 300px;
-    margin-top: 10px;
-}*/
-
 #button-div{
     display: flex;
     justify-content: center;
@@ -84,20 +67,27 @@
 
 
 button {
-    margin: 5px 5px 0px 5px;
+ 
+  background-color: #00508F; 
+  border: none;
+  color: white;
+  font-size: 13px;
+  padding: 15px 32px;
+  
+ 
 }
 
 
-
-/*#end-of-form-action-btn button{
-    display: flex;
-    justify-content: center;
-    margin: 13px auto 0px auto;
-    padding: 5px;
-    border-radius: 5px;
-    background-color: darkblue;
+/*Welcome user text at top of nav bar*/
+#welcome{
     color: white;
-}*/
+    font-size: 15px;
+    position: absolute;
+    top: 22px;
+    left: 1050px;
+    
+    
+}
 
 #end-of-form-action-btn button{
   border-radius: 15px;
@@ -122,7 +112,7 @@ h1 {
 }
 
 
-#sign-in-p {
+#sign-in-p,h1 {
     margin: 30px auto;
     width: 400px;
     text-align: center;
@@ -147,42 +137,10 @@ form {
 
 }
 
-/*fieldset {
-    margin: 20px auto;
-    width: 300px;
-    border: 0;
-}*/
-
 fieldset {
     border: 0;
     margin-top: 3%;
 }
-
-
-/*
-label {
-
-  width: 120px;
-  text-align: right;
-  
-}
-
-
-input {
-  font: 1em sans-serif;
-
- 
-  width: 300px;
-  box-sizing: border-box;
-
-  border: 1px solid #999;
-
-  border-radius: 5px;
-  
-  display: block;
-  padding: 10px 12px;
-  
-}*/
 
 input,label {
     align-items: center;
@@ -195,8 +153,10 @@ input,label {
 }
 
 input{
-      border: 1px solid #999;
-      background-color: #e6e6e6;
+    border: none;
+    border-radius: 4px;
+    box-sizing: border-box;
+    background-color: #e6e6e6;
     
 }
 
@@ -208,6 +168,8 @@ input:focus {
   /* To give a little highlight on active elements */
   border-color: #000;
 }
+
+/* Vertical Stripes on Sign-In Page*/
 
 .vl {
   border-left: 60px solid #00508F;
@@ -236,13 +198,10 @@ input:focus {
 
 
 h2 {
-    margin-left: auto;
-    margin-right: auto;
-    width: 400px;
+    margin: 30px auto;
     text-align: center;
-    font-size: 18px;
-    font-style: italic;
-    padding-top: 10px;
+    font-size: 15px;
+    font-weight: normal;
 }
 
 #p2 {
@@ -263,31 +222,17 @@ h2 {
 }
 
 
-/*table {
-    height: 300px;
-    width: 1300px;
-    border: 1px solid black;
-    border-collapse: collapse;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;  
-}
-*/
-
-table{
+table.indexTable{
     width:100%;
     border-collapse: collapse;
     height: 400px;
     overflow-y: scroll; 
     display: block;
     
-    
-    
 }
 
-
+/* Every second row in table will be shaded grey*/
 #tr-main:nth-child(even) {background-color: #f2f2f2;}
-
 
 
 #abstract-length{
@@ -303,49 +248,34 @@ table{
     width: 130px;
 }
 
-#bio-height {
-    height: 170px;
+
+table.profileTable{
+  background-color: #e6e6e6;
+  margin-top: 40px;   
+  margin-left: auto;
+  margin-right: auto;
+  
+ 
+  
 }
 
-#table-profile {
-    width: 600px;
-    border-collapse: collapse;
+.profileLabel,.profileTD{
+    border-bottom: none;
 }
-
-/*th {
-    width: 200px;
-    border: 1px solid black;
-    border-collapse: collapse;
-}
-*/
 
 th {
     text-align: left;
     font-weight: bold;
     font-size: 15px;
     width: 100px;
-    border-bottom: 2px solid #00508F;
-     
+    border-bottom: 2px solid #00508F;    
    
 }
-
 
 th, td {
   padding: 5px;
   border-bottom: 2px solid #00508F;
   
-}
-
-/*tr:hover {
-    background-color: powderblue;
-}*/
-
-
-
-#td-border {
-    font-style: italic;
-    border: 1px solid black;
-    border-collapse: collapse;
 }
 
 .nav-background{
@@ -359,9 +289,7 @@ th, td {
     margin:0 auto;
     border-radius: 15px;
     border: 2px solid #00508F;
-    
-   
-    
+      
 }
 
 .createlabel{
@@ -385,16 +313,16 @@ legend{
     color: #00508F;
 }
 
-#biolabel{
-    height:80px;
-    
-}
-
 #logo{
  position: absolute;
 	top: 12px;
 	left:12px;
     
+}
+
+textarea{
+    border: 1px solid #999;
+    background-color: #e6e6e6;    
 }
 
 

@@ -4,5 +4,6 @@
             <button onclick="window.location.href = 'profile.html';" ng-if="stfCtrl.signedIn">View Profile</button>
             <button onclick="window.location.href = '#';" ng-if="stfCtrl.signedIn" ng-click="stfCtrl.signOut()">Sign Out</button>
             <button onclick="window.location.href = 'sign-in.html';" ng-if="!stfCtrl.signedIn">Sign In</button>
+            <button onclick="window.location.href = 'contact.html';" ng-if="stfCtrl.signedIn">Contact</button>
             <div id="welcome" ><i>{{stfCtrl.welcome}}</i></div>
 </div>

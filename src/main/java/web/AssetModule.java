@@ -21,6 +21,8 @@ public class AssetModule extends Jooby {
         assets("/index.html");
         assets("/profile.html");
         assets("/sign-in.html");
+        assets("/thankyou.html");
+        assets("/contact.html");
         
         
         assets("/css/homepage.css");

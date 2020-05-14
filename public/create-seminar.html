@@ -10,6 +10,8 @@ and open the template in the editor.
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" type="text/css" href="css/index.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600,700,700i&display=swap" rel="stylesheet">
+        
         
         <script src="js/angular.min.js"></script>
         <script src="js/angular-resource.min.js"></script>
@@ -18,50 +20,51 @@ and open the template in the editor.
     </head>
     <body ng-controller="SeminarController as semctrl">
         
-        <div ng-include="'menu.html'" ></div>
+        <img id="logo" src="images/logo.png"> 
+       
+        <div class="nav-background">
+        <div ng-include="'menu.html'"></div>
+        </div>
         
-        
-        <div class="uni-header1"></div>
         <div class="uni-header2"></div>
-        <div class="uni-header3"></div>
         
   
          <p id="sign-in-p">Create a Custom Seminar</p>
 
-        <fieldset>
-            <legend></legend>
+        <fieldset class="createaccount-fieldset">
+            <legend>Seminar Details</legend>
             <form ng-submit="semctrl.registerSeminar(seminar)">
                 <div>
-                    <label for="topic">Topic:</label>
-                    <input type="text"  name="topic" ng-model="seminar.topic" required>
+                    <label class ="createlabel" for="topic">Topic:</label>
+                    <input class ="createinput" type="text"  name="topic" placeholder="Enter Topic" ng-model="seminar.topic" required>
                 </div>
                 <div>
-                    <label for="title">Title:</label>
-                    <input type="text"  name="title" ng-model="seminar.title" required>
+                    <label class ="createlabel" for="title">Title:</label>
+                    <input class ="createinput" type="text"  name="title" placeholder="Enter Title" ng-model="seminar.title" required>
                 </div>
                 <div>
-                    <label for="abstracts">Abstract:</label>
-                    <input type="text"  name="abstracts" ng-model="seminar.abstracts" required>
+                    <label class ="createlabel" for="abstracts">Abstract:</label>
+                    <textarea class ="createinput"  type="text"  name="abstracts" placeholder="Enter Abstract"ng-model="seminar.abstracts" required></textarea>
                 </div>
                 <div>
-                    <label for="location">Location:</label>
-                    <input type="text" name="location" placeholder="Owheo G34" ng-model="seminar.location">
+                    <label class ="createlabel" for="location">Location:</label>
+                    <input class ="createinput" type="text" name="location" placeholder="Owheo G34" ng-model="seminar.location">
                 </div>
                 <div> 
-                    <label for="modality">Modality:</label>
-                    <input type="text"  name="modality" placeholder=" via Zoom or University" ng-model="seminar.modality" required>
+                    <label class ="createlabel" for="modality">Modality:</label>
+                    <input class ="createinput" type="text"  name="modality" placeholder=" via Zoom or University" ng-model="seminar.modality" required>
                     
                 </div>
                 <div>
-                    <label for="date">Date:</label>
-                    <input type="text" name="date" ng-model="seminar.date" required>
+                    <label class ="createlabel" for="date">Date:</label>
+                    <input class ="createinput" type="text" name="date" placeholder="Enter Date"ng-model="seminar.date" required>
                 </div>   
                 <div>
-                    <label for="displayName">Display Name:</label>
-                    <input type="text" name="displayName" ng-model="seminar.displayName" required>
+                    <label class ="createlabel" for="displayName">Display Name:</label>
+                    <input class ="createinput" type="text" name="displayName" placeholder="Enter Display Name" ng-model="seminar.displayName" required>
                 </div> 
                 <div id="end-of-form-action-btn">
-                    <button type="submit" class="registerbtn">Create Seminar</button>
+                    <button  type="submit" onclick="window.location.href='thankyou.html'" class="registerbtn">Create Seminar</button>
                 </div>
             </form>
         </fieldset>
