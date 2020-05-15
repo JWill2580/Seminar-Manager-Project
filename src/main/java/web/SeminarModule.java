@@ -15,7 +15,8 @@ public class SeminarModule extends Jooby {
         get("/api/seminars", () -> manageSeminar.getSeminars());
         get("/api/seminars/:id", (req) -> {
             String id = req.param("id").value();
-            return manageSeminar.getSeminarById(id);
+            Integer idInt = new Integer(id);
+            return manageSeminar.getSeminarById(idInt);
         });
         
         

@@ -59,7 +59,7 @@ public class JDBCManageSeminar {
                 // create the statement
                 PreparedStatement stmt = dbCon.prepareStatement(sql);) {
 
-            stmt.setString(1, sem.getSeminarID());
+            stmt.setInt(1, sem.getSeminarID());
             stmt.executeUpdate();
 
         } catch (SQLException ex) {
@@ -69,7 +69,7 @@ public class JDBCManageSeminar {
     }
 
 
-    public Seminar getSeminarById(String idDefined) {
+    public Seminar getSeminarById(int idDefined) {
         String statement = "select * from SEMINAR where SEMINARID = ?";
 
         try (
@@ -80,13 +80,13 @@ public class JDBCManageSeminar {
             PreparedStatement stmt = dbCon.prepareStatement(statement);) {
             
             
-            stmt.setString(1, idDefined);
+            stmt.setInt(1, idDefined);
 
             // execute the query
             ResultSet rs = stmt.executeQuery();
 
             if (rs.next()) {
-                String seminarID = rs.getString("SEMINARID");
+                Integer seminarID = rs.getInt("SEMINARID");
                 String topic = rs.getString("TOPIC");
                 String title = rs.getString("TITLE");
                 String abstracts = rs.getString("ABSTRACT");
@@ -107,43 +107,7 @@ public class JDBCManageSeminar {
 
     }
     
-    public Seminar getSeminarByName(String name) {
-        String statement = "select * from SEMINAR where DISPLAYNAME = ?";
-
-        try (
-            // get a connection to the database
-            Connection dbCon = DbConnection.getConnection(DbConnection.getDefaultConnectionUri());
-                
-            // create the statement
-            PreparedStatement stmt = dbCon.prepareStatement(statement);) {
-            
-            
-            stmt.setString(1, name);
-
-            // execute the query
-            ResultSet rs = stmt.executeQuery();
-
-            if (rs.next()) {
-                String seminarID = rs.getString("SEMINARID");
-                String topic = rs.getString("TOPIC");
-                String title = rs.getString("TITLE");
-                String abstracts = rs.getString("ABSTRACT");
-                String location = rs.getString("LOCATION");
-                String modality = rs.getString("MODALITY");
-                String date = rs.getString("DAY_DATE");
-                String displayName = rs.getString("DISPLAYNAME");
-
-                return new Seminar(seminarID, topic, title, abstracts, location, modality, date, displayName);
-
-            } else {
-                return null;
-            }
-
-        } catch (SQLException ex) {
-            throw new DAOException(ex.getMessage(), ex);
-        }
-
-    }
+   
 
     public Collection<Seminar> getSeminars() {
         String statement = "select * from SEMINAR";
@@ -161,7 +125,7 @@ public class JDBCManageSeminar {
 
             while (rs.next()) {
 
-                String seminarID = rs.getString("SEMINARID");
+                Integer seminarID = rs.getInt("SEMINARID");
                 String topic = rs.getString("TOPIC");
                 String title = rs.getString("TITLE");
                 String abstracts = rs.getString("ABSTRACT");

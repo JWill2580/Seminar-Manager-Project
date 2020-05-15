@@ -9,7 +9,7 @@ import java.time.LocalDate;
 
 public class Seminar {
 
-    private String seminarID;
+    private Integer seminarID;
     private String topic;
     private String title;
     private String abstracts;
@@ -18,7 +18,7 @@ public class Seminar {
     private String date;
     private String displayName;
 
-    public Seminar(String seminarID, String topic, String title, String abstracts, String location, String modality, String date, String displayName) {
+    public Seminar(Integer seminarID, String topic, String title, String abstracts, String location, String modality, String date, String displayName) {
         this.seminarID = seminarID;
         this.topic = topic;
         this.title = title;
@@ -29,8 +29,24 @@ public class Seminar {
         this.displayName = displayName;
     }
 
+    public Seminar(String topic, String title, String abstracts, String location, String modality, String date, String displayName) {
+        this.topic = topic;
+        this.title = title;
+        this.abstracts = abstracts;
+        this.location = location;
+        this.modality = modality;
+        this.date = date;
+        this.displayName = displayName;
+    }
+
+    public Seminar() {
+    }
+    
+    
+    
+
     //Getters
-    public String getSeminarID() {
+    public Integer getSeminarID() {
         return seminarID;
     }
 
@@ -63,7 +79,7 @@ public class Seminar {
     }
 
     //Setters
-    public void setSeminarID(String seminarID) {
+    public void setSeminarID(Integer seminarID) {
         this.seminarID = seminarID;
     }
 

@@ -7,7 +7,7 @@ package domain;
 
 public class Staff {
     
-    private String staffID;
+    private Integer staffID;
     private String username;
     private String password;
     private String firstName;
@@ -15,7 +15,7 @@ public class Staff {
     private String bio;
     private String email;
     
-    public Staff(String staffID, String username, String password, String firstName, String surname, String bio, String email) {
+    public Staff(Integer staffID, String username, String password, String firstName, String surname, String bio, String email) {
         this.staffID = staffID;
         this.username = username;
         this.password = password;
@@ -25,12 +25,23 @@ public class Staff {
         this.email = email;
     }
 
+    public Staff(String username, String password, String firstName, String surname, String bio, String email) {
+        this.username = username;
+        this.password = password;
+        this.firstName = firstName;
+        this.surname = surname;
+        this.bio = bio;
+        this.email = email;
+    }
+    
+    
+
     public Staff() {
     }
     
     
 
-    public String getStaffID() {
+    public Integer getStaffID() {
         return staffID;
     }
 
@@ -58,7 +69,7 @@ public class Staff {
         return email;
     }
 
-    public void setStaffID(String staffID) {
+    public void setStaffID(Integer staffID) {
         this.staffID = staffID;
     }
 

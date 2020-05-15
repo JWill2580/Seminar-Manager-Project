@@ -56,7 +56,7 @@ public class JDBCManageStaff  {
         PreparedStatement stmt = dbCon.prepareStatement(sql);
     ) {
         
-        stmt.setString(1, staff.getStaffID());
+        stmt.setInt(1, staff.getStaffID());
         stmt.executeUpdate();
         
         } catch (SQLException ex) {
@@ -80,7 +80,7 @@ public class JDBCManageStaff  {
             ResultSet rs = stmt.executeQuery();
 
             if (rs.next()) {
-                String staffID = rs.getString("STAFFID");
+                Integer staffID = rs.getInt("STAFFID");
                 String username = rs.getString("USERNAME");
                 String password = rs.getString("PASSWORD");
                 String firstName = rs.getString("FIRSTNAME");
@@ -99,7 +99,7 @@ public class JDBCManageStaff  {
         }
     }
     
-    public Staff getStaffThroughID(String id) {
+    public Staff getStaffThroughID(int id) {
         String statement = "select * from STAFF where STAFFID = ?";
         
         try (
@@ -108,13 +108,13 @@ public class JDBCManageStaff  {
             
             // create the statement
             PreparedStatement stmt = dbCon.prepareStatement(statement);) {
-            stmt.setString(1, id);
+            stmt.setInt(1, id);
 
             // execute the query
             ResultSet rs = stmt.executeQuery();
 
             if (rs.next()) {
-                String staffID = rs.getString("STAFFID");
+                Integer staffID = rs.getInt("STAFFID");
                 String username = rs.getString("USERNAME");
                 String password = rs.getString("PASSWORD");
                 String firstName = rs.getString("FIRSTNAME");
