@@ -9,7 +9,7 @@
  */
 
 CREATE TABLE Staff (
-StaffID varchar(50) not null auto_increment,
+StaffID INTEGER not null auto_increment,
 Username VARCHAR(20) NOT NULL unique,
 Password VARCHAR(100) NOT NULL,
 FirstName VARCHAR(100) NOT NULL,
@@ -21,7 +21,7 @@ CONSTRAINT Staff_PK PRIMARY KEY (StaffID)
 );
 
 CREATE TABLE Seminar(
-SeminarID varchar(50) not null auto_increment,
+SeminarID INTEGER not null auto_increment,
 Topic VARCHAR(255) NOT NULL,
 Title VARCHAR(255) NOT NULL,
 Abstract TEXT NOT NULL,
