@@ -15,9 +15,11 @@
 }
 
 #menu {
-    margin: 0 auto;
+    /*margin: 0 auto;*/
+    margin-left: 300px;
     width: 600px;
     text-align: center;
+    display: inline;
 }
 
 #menu button + div {
@@ -50,6 +52,17 @@
     margin-top: 5%;
 }
 
+#admin-img{
+    width:144px;
+    height:216px;
+    margin-left: 350px;
+    position:absolute;
+    float: left;
+    padding: 15px;
+    
+    
+}
+
 #button-div{
     display: flex;
     justify-content: center;
@@ -72,7 +85,8 @@ button {
   border: none;
   color: white;
   font-size: 13px;
-  padding: 15px 32px;
+  padding: 15px 30px;
+  display: inline;
   
  
 }
@@ -107,7 +121,7 @@ button {
 
 h1 {
     text-align: center;
-    padding: 10px;
+   
     margin: 10px;
 }
 
@@ -127,6 +141,7 @@ h1 {
     width: 400px;
     text-align: center;
     font-size: 10px;
+    
     
 }
 
@@ -198,10 +213,36 @@ input:focus {
 
 
 h2 {
-    margin: 30px auto;
+    margin: 20px auto;
     text-align: center;
     font-size: 15px;
     font-weight: normal;
+}
+
+.name{
+    font-weight: bold;
+    margin-top:10px;
+    
+}
+
+.adminBio{
+    margin-top: 6%;
+    text-align: left;
+    font-size: 15px;
+    font-weight: normal;
+    width:300px;
+}
+
+h3{
+    margin: 30px auto;
+    font-size: 15px;
+    font-weight: normal;
+    
+}
+
+.contactDetails{
+  margin-left: 550px;
+    
 }
 
 #p2 {
@@ -210,7 +251,8 @@ h2 {
     width: 400px;
     text-align: center;
     font-size: 14px;
-    font-style: italic;   
+    font-style: italic;  
+    color:#00508F;
 }
 
 #homepage-img{   
@@ -323,6 +365,11 @@ legend{
 textarea{
     border: 1px solid #999;
     background-color: #e6e6e6;    
+}
+
+#description{
+    font-size: 15px;
+    text-align: center;
 }
 
 
