@@ -15,12 +15,23 @@
 }
 
 #menu {
-    /*margin: 0 auto;*/
-    margin-left: 300px;
-    width: 600px;
+    /*margin: auto 0;*/
     text-align: center;
-    display: inline;
+    /*margin-left: 300px;*/
+    width: 100%;
+    text-align: center;
+    display: inline-block;
 }
+
+.navhov{
+   border-radius: 25px;     
+}
+
+.navhov:hover{
+    color:lightblue;
+}
+
+
 
 #menu button + div {
     display: inline;
@@ -45,7 +56,7 @@
 #otago-img{
     width: 250px;
     height: 381.859px;
-    margin-left: 50px;
+    margin-left: 100px;
     position:absolute;
     float: left;
     padding: 15px;
@@ -81,7 +92,7 @@
 
 button {
  
-  background-color: #00508F; 
+  background-color: #00508F;
   border: none;
   color: white;
   font-size: 13px;
@@ -104,16 +115,25 @@ button {
 }
 
 #end-of-form-action-btn button{
-  border-radius: 15px;
+  border-radius: 25px;
   color: white;
+  
   background-color: #00508F;
   padding: 10px 28px;
   text-align: center;
   font-size: 16px;
-  margin: 13px auto 0px auto;
+  margin: 40px auto 0px auto;
   display:block;
   margin-top: 10px;
-  }
+  
+  border-color: black;
+  border-width: 10px
+}
+
+#end-of-form-action-btn button:hover{
+      color: lightblue;
+}
+  
 #page-header{ 
         margin: 0 auto;
         background-color: lightcoral;
@@ -157,10 +177,20 @@ fieldset {
     margin-top: 3%;
 }
 
-input,label {
+input {
     align-items: center;
     width: 300px;
     padding: 10px 12px;
+    margin:0 auto;
+    display: block;
+    border-radius: 4px;
+    box-sizing: border-box;  
+}
+
+label {
+    align-items: center;
+    width: 300px;
+    padding: 10px 12px 10px 0px;
     margin:0 auto;
     display: block;
     border-radius: 4px;
@@ -248,11 +278,13 @@ h3{
 #p2 {
     margin-left: auto;
     margin-right: auto;
+    padding: 20px 0px;
     width: 400px;
     text-align: center;
     font-size: 14px;
     font-style: italic;  
-    color:#00508F;
+    /*color:#00508F;*/
+    color:#767676;;
 }
 
 #homepage-img{   
@@ -278,7 +310,7 @@ table.indexTable{
 
 
 #abstract-length{
-    width: 500px;
+    width: 630px;
 }
 
 #title-length {
@@ -327,7 +359,7 @@ th, td {
 }
 
 .createaccount-fieldset{
-    max-width: 600px;
+    max-width: 500px;
     margin:0 auto;
     border-radius: 15px;
     border: 2px solid #00508F;
@@ -339,7 +371,7 @@ th, td {
     
 }
 
-.createinput, .createlabel{
+.createinput{
     
     width: 300px;
     padding: 12px 15px;
@@ -348,6 +380,16 @@ th, td {
     border: none;
     border-radius: 4px;
     box-sizing: border-box;
+}
+
+.createlabel{
+    width: 300px;
+    padding: 12px 15px 12px 0px;
+    margin:0 auto;
+    display: block;
+    border: none;
+    border-radius: 4px;
+    box-sizing: border-box;  
 }
 
 legend{
@@ -370,6 +412,13 @@ textarea{
 #description{
     font-size: 15px;
     text-align: center;
+    padding: 0px 400px;
+}
+
+.drop-down{
+    height:40px;
+    margin-left: 26px;
+    width: 300px;
 }
 
 
