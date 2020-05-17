@@ -46,15 +46,32 @@ and open the template in the editor.
                     <label class ="createlabel" for="abstracts">Abstract:</label>
                     <textarea class ="createinput"  type="text"  name="abstracts" placeholder="Enter Abstract"ng-model="seminar.abstracts" required></textarea>
                 </div>
+                
+                
                 <div>
                     <label class ="createlabel" for="location">Location:</label>
                     <input class ="createinput" type="text" name="location" placeholder="Owheo G34" ng-model="seminar.location">
                 </div>
-                <div> 
+                
+                
+                
+                <div>
+                    <label class="createlabel" for="mod">Modality:</label>
+                    <div>
+                    <select class="drop-down" id="mod" ng-model="seminar.modality">
+                        <option value="Zoom">Zoom</option>
+                        <option value="University">University</option>
+                    </select>
+                    </div>    
+                </div>
+                
+                
+                
+                <!--<div> 
                     <label class ="createlabel" for="modality">Modality:</label>
                     <input class ="createinput" type="text"  name="modality" placeholder=" via Zoom or University" ng-model="seminar.modality" required>
                     
-                </div>
+                </div>-->
                 <div>
                     <label class ="createlabel" for="date">Date:</label>
                     <input class ="createinput" type="text" name="date" placeholder="Enter Date"ng-model="seminar.date" required>

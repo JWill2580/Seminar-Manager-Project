@@ -25,9 +25,7 @@ public class AssetModule extends Jooby {
         assets("/contact.html");
         
         
-        assets("/css/homepage.css");
         assets("/css/index.css");
-        assets("/css/profile.css");
         
         assets("js/angular.min.js");
         assets("js/angular-resource.min.js");
