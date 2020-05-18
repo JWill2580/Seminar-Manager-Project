@@ -17,6 +17,11 @@ import static org.junit.Assert.*;
 import domain.Staff;
 import java.util.ArrayList;
 import dao.JDBCManageStaff;
+import domain.Seminar;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.Collection;
 /**
  *
@@ -25,7 +30,8 @@ import java.util.Collection;
 public class StaffDAOTest {
     private Staff member1;
     private Staff member2;
-    private Staff member3;
+    private Staff member3;  
+    private Staff test;
     
 
     private JDBCManageStaff staffMembers = new JDBCManageStaff();
@@ -39,66 +45,35 @@ public class StaffDAOTest {
         this.member2 = new Staff("CustomCosta", "unirocks101", "Daniel", "DaCosta","info310 boss", "dancosta123@gmail.com");
         this.member3 = new Staff("ECorp", "Donthackme7878", "George", "McLuvin","a multi billion dollar industry", "georgemc@ecorp.co.nz");
         
-        //staffMembers.saveStaff(member1);
-        //staffMembers.saveStaff(member2);
+        staffMembers.saveStaff(member1);
+        staffMembers.saveStaff(member2);
         //staffMembers.saveStaff(member3);
     }
     
     @After
     public void tearDown() {
-        //staffMembers.delete(member1);
-        //staffMembers.delete(member2);
-        //staffMembers.delete(member3);
+        staffMembers.deleteStaff(member1);
+        staffMembers.deleteStaff(member2);
+        staffMembers.deleteStaff(member3);
     }
-    
     @Test
-    public void saveStaff(){
+    public void testSaveStaff(){
         staffMembers.saveStaff(member1);
         
-        Staff retrieved = staffMembers.getStaffThroughID(1);
+        test = staffMembers.getStaffThroughUsername("FreeFred");
         
-        assertEquals("Retrieved staff member should be the same",
-        member3, retrieved);
+        assertEquals("Retrieved staff member should be the same", member1.getUsername().equals(test.getUsername()));
     }
-    
-    /*@Test
-    public void getStaff(){
-        staffMembers.saveStaff(member1);
-        Staff p = staffMembers.getStaffThroughID(1);
-        
+    @Test
+    public void testDeleteStaff(){
+        // delete the staff via the DAO
+        staffMembers.deleteStaff(member1);
+        // try to retrieve the deleted staff member
+        Staff retrieved = staffMembers.getStaffThroughUsername("FreeFred");
+        // ensure that the staff member was not retrieved (should be null)
+        assertNull("Staff should no longer exist", retrieved);
+    }
 
-            if (p.equals(member1)) {
-                // ensure that all of the details were correctly retrieved
-                assertEquals(member1.getStaffID(), p.getStaffID());
-                assertEquals(member1.getUsername(), p.getUsername());
-                assertEquals(member1.getPassword(), p.getPassword());
-                assertEquals(member1.getFirstName(), p.getFirstName());
-                assertEquals(member1.getSurname(), p.getSurname());
-                assertEquals(member1.getBio(), p.getBio());
-                assertEquals(member1.getEmail(), p.getEmail());
-            }
-    }
     
-    @Test
-    public void getStaffThroughID(){
-        Staff retrieved = staffMembers.getStaffThroughID(member1.getStaffID());
-        assertEquals("retrieved staff should be the same", member1, retrieved);
-        
-        if(retrieved.equals(member1)){
-            assertEquals(member1.getStaffID(), retrieved.getStaffID());
-                assertEquals(member1.getUsername(), retrieved.getUsername());
-                assertEquals(member1.getPassword(), retrieved.getPassword());
-                assertEquals(member1.getFirstName(), retrieved.getFirstName());
-                assertEquals(member1.getSurname(), retrieved.getSurname());
-                assertEquals(member1.getBio(), retrieved.getBio());
-                assertEquals(member1.getEmail(), retrieved.getEmail());
-        }
-        Staff result = staffMembers.getStaffThroughID("98765");
-        // assert that the result is null
-        assertNull("Staff member should no longer exist", result);
-    }
-    //@Test
-    //public Boolean validateCredentials(String username, String password){
-     //   return true;
-    //}*/
+
 }

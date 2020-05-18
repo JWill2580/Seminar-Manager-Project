@@ -28,7 +28,7 @@ public class JDBCManageStaff  {
             // create the statement
             PreparedStatement stmt = dbCon.prepareStatement(statement, Statement.RETURN_GENERATED_KEYS);) {
                   
-            
+
             stmt.setString(1, aStaff.getUsername());
             stmt.setString(2, aStaff.getPassword());
             stmt.setString(3, aStaff.getFirstName());
@@ -40,14 +40,13 @@ public class JDBCManageStaff  {
 
             ResultSet rs = stmt.getGeneratedKeys();
             rs.next();
-            System.out.println(rs.getString(1));
      
         } catch (SQLException ex) { 
             throw new DAOException(ex.getMessage(), ex);
         }
     }
-    public void delete(Staff staff) {
-        String sql = "delete from STAFF where STAFFID = ?";
+    public void deleteStaff(Staff staff) {
+        String sql = "delete from STAFF";
                     try (
         // get a connection to the database
         Connection dbCon = DbConnection.getConnection(DbConnection.getDefaultConnectionUri());
@@ -56,7 +55,7 @@ public class JDBCManageStaff  {
         PreparedStatement stmt = dbCon.prepareStatement(sql);
     ) {
         
-        stmt.setInt(1, staff.getStaffID());
+        //stmt.setInt(1, staff.getStaffID());
         stmt.executeUpdate();
         
         } catch (SQLException ex) {
@@ -123,6 +122,38 @@ public class JDBCManageStaff  {
                 String email = rs.getString("EMAIL");
                 
                 return new Staff(staffID, username, password, firstName, surname, bio, email);
+                
+            } else {
+                return null;
+            }
+
+        } catch (SQLException ex) {
+            throw new DAOException(ex.getMessage(), ex);
+        }
+    }
+        public Staff getStaffThroughUsername(String usernames) {
+        String statement = "select * from STAFF where USERNAME = ?";
+        
+        try (
+            // get a connection to the database
+            Connection dbCon = DbConnection.getConnection(DbConnection.getDefaultConnectionUri());
+            
+            // create the statement
+            PreparedStatement stmt = dbCon.prepareStatement(statement);) {
+            stmt.setString(1, usernames);
+
+            // execute the query
+            ResultSet rs = stmt.executeQuery();
+
+            if (rs.next()) {
+                String username = rs.getString("USERNAME");
+                String password = rs.getString("PASSWORD");
+                String firstName = rs.getString("FIRSTNAME");
+                String surname = rs.getString("SURNAME");
+                String bio = rs.getString("BIO");
+                String email = rs.getString("EMAIL");
+                
+                return new Staff(username, password, firstName, surname, bio, email);
                 
             } else {
                 return null;
