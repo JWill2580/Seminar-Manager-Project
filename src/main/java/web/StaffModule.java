@@ -18,6 +18,7 @@ public class StaffModule extends Jooby {
     
     public StaffModule(JDBCManageStaff manageStaff) {
         
+
         get("/api/staff/:username", (req) -> {
             String username = req.param("username").value();
             return manageStaff.getStaff(username);      
