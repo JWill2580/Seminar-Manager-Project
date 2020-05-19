@@ -22,7 +22,7 @@ public class Server extends Jooby {
     private JDBCManageSeminar manageSeminar = new JDBCManageSeminar();
     
     public Server(){
-        port(8088);
+        port(8089);
        
         
         use(new Gzon());
